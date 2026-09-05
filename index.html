@@ -129,7 +129,7 @@
             background-attachment: fixed;
         }
 
-        /* --- LAYER 1: ENCHANTED GATEWAY --- */
+        /* --- LAYER 1: ENCHANTED GATEWAY (SLOW, SEAMLESS DOWNWARD SLIDE) --- */
         .fairytale-gateway-screen {
             position: fixed;
             top: 0;
@@ -559,7 +559,7 @@
             opacity: 0.8;
         }
 
-        /* --- WEDDING CHAPTERS STYLING --- */
+        /* --- WEDDING CHAPTERS STYLING CENTERED WITH MINIMALIST THIN COUNTDOWN FONT --- */
         #scene-menu {
             width: 100%;
             min-height: 100vh;
@@ -673,7 +673,7 @@
             user-select: none;
         }
 
-        /* --- THE DAY (SCENE-DAY) STYLING --- */
+        /* --- THE DAY (SCENE-DAY) STYLING WITH LEFT-ALIGNED BUTTONS --- */
         #scene-day {
             padding: 5rem 1.8rem 5rem 1.8rem;
             text-align: center;
@@ -775,6 +775,7 @@
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
+        /* LEFT-ALIGNED ACTION BUTTONS MATCHING VENUE TEXT ON DESKTOP */
         .day-card-actions {
             display: flex;
             align-items: center;
@@ -784,7 +785,7 @@
             width: 100%;
         }
 
-        /* --- THE ENTOURAGE (SCENE-ENTOURAGE) --- */
+        /* --- THE ENTOURAGE (SCENE-ENTOURAGE) ADJUSTED WITH 20% OPACITY --- */
         #scene-entourage {
             padding: 5.5rem 1.8rem 5rem 1.8rem;
             text-align: center;
@@ -1256,7 +1257,7 @@
             user-select: none;
         }
 
-        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT & SIDE-BY-SIDE DETAILS TABS --- */
+        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT --- */
         @media (max-width: 768px) {
             #scene-menu,
             #scene-day,
@@ -1264,9 +1265,9 @@
             #scene-details,
             #scene-gallery,
             #scene-rsvp {
-                background-size: cover !important;
-                background-position: center center !important;
-                background-repeat: no-repeat !important;
+                background-size: contain !important;
+                background-position: center top !important;
+                background-repeat: repeat-y !important;
                 background-attachment: scroll !important;
                 padding-left: 0.5rem !important;
                 padding-right: 0.5rem !important;
@@ -1859,7 +1860,7 @@
             </div>
         </section>
 
-        <!-- 7. DETAILS (SCENE-DETAILS) -->
+        <!-- 7. DETAILS (SCENE-DETAILS WITH ELEGANT MINIMALIST 20% TRANSLUCENT TABBED PANELS) -->
         <section class="stage hidden" id="scene-details">
             <h2 class="details-header-title">THE DETAILS</h2>
 
@@ -1944,7 +1945,7 @@
         <!-- RSVP -->
         <section class="stage hidden" id="scene-rsvp">
             <article class="chapter-container fade-in-up" style="max-width: 550px;">
-                <h2 class="chapter-title">WE'VE SAVED YOU A SEAT.</h2>
+                <h2 class="chapter-title">WE'VESAVED YOU A SEAT.</h2>
                 <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted);">
                     Please let us know if you'll be joining us.
                 </p>
