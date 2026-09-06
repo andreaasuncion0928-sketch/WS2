@@ -69,22 +69,6 @@
             scroll-behavior: smooth;
         }
 
-        /* --- GLOBAL IMMUTABLE BACKGROUND LAYER (LOCKED) --- */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: linear-gradient(rgba(255, 253, 249, 0.12), rgba(253, 240, 244, 0.18)), url('background.jpg?v=mobile-fit');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: -1;
-            pointer-events: none;
-        }
-
         /* --- SAFE NATURAL WORD WRAPPING --- */
         h1, h2, h3, h4, h5, h6, p, span, a, button, div, label {
             word-break: normal !important;
@@ -127,6 +111,24 @@
 
         .stage.hidden {
             display: none !important;
+        }
+
+        /* --- UNIFIED BACKGROUND.JPG SETTINGS FOR ALL SUCCEEDING PAGES (LOCKED FLOWERS VISIBILITY) --- */
+        #scene-story,
+        #scene-menu,
+        #scene-day,
+        #scene-entourage,
+        #scene-details,
+        #scene-gallery,
+        #scene-rsvp,
+        #scene-outro {
+            width: 100%;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(255, 253, 249, 0.12), rgba(253, 240, 244, 0.18)), url('background.jpg?v=mobile-fit');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         /* --- LAYER 1: ENCHANTED GATEWAY (SLOW, SEAMLESS DOWNWARD SLIDE) --- */
@@ -315,11 +317,11 @@
             transform: translateY(-1px);
         }
 
-        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY --- */
+        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (20% OPACITY LOCK) --- */
         .chapter-container {
             max-width: 900px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.60) !important;
+            background: rgba(255, 255, 255, 0.20) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             color: var(--text-dark) !important;
@@ -327,7 +329,7 @@
             border-radius: 12px;
             box-shadow: 0 15px 45px rgba(173, 83, 98, 0.08);
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.85);
             margin: 2rem 0;
             text-align: center;
         }
@@ -559,27 +561,23 @@
             opacity: 0.8;
         }
 
-        /* --- WEDDING CHAPTERS STYLING CENTERED WITH MINIMALIST THIN COUNTDOWN FONT --- */
+        /* --- WEDDING CHAPTERS MENU CARD WITH 20% TRANSLUCENCY --- */
         #scene-menu {
-            width: 100%;
-            min-height: 100vh;
-            margin: 0 auto;
-            text-align: center !important;
-            position: relative;
+            padding: 2.5rem 1rem;
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2.5rem 1rem;
         }
 
         .chapters-board-card {
-            background: rgba(255, 255, 255, 0.60) !important;
+            background: rgba(255, 255, 255, 0.20) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 16px;
             padding: 3.5rem 2.5rem 3rem 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.85);
             box-shadow: 0 15px 45px rgba(185, 165, 160, 0.16);
             width: 100%;
             max-width: 920px;
@@ -673,23 +671,14 @@
             user-select: none;
         }
 
-        /* --- STRICTLY LOCKED CHAPTER PAGES (THE DAY, ENTOURAGE, DETAILS) --- */
-        #scene-day,
-        #scene-entourage,
-        #scene-details {
-            width: 100%;
-            min-height: 100vh;
+        /* --- THE DAY (SCENE-DAY) STYLING WITH 20% OPACITY CARDS --- */
+        #scene-day {
+            padding: 5rem 1.8rem 5rem 1.8rem;
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-sizing: border-box;
-            background: transparent !important;
-        }
-
-        #scene-day {
-            padding: 5rem 1.8rem;
-            text-align: center;
         }
 
         .the-day-header-subtitle {
@@ -793,10 +782,14 @@
             width: 100%;
         }
 
-        /* --- THE ENTOURAGE (SCENE-ENTOURAGE) ADJUSTED WITH 20% OPACITY --- */
+        /* --- THE ENTOURAGE (SCENE-ENTOURAGE) ADJUSTED WITH 20% OPACITY CARDS --- */
         #scene-entourage {
             padding: 5.5rem 1.8rem 5rem 1.8rem;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .entourage-header-subtitle {
@@ -925,6 +918,10 @@
         #scene-details {
             padding: 5rem 1.8rem 5rem 1.8rem;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .details-header-title {
@@ -1053,14 +1050,14 @@
             font-weight: 500;
         }
 
-        /* --- GALLERY SECTION WRAPPER & MASONRY/GRID CONTAINER --- */
+        /* --- GALLERY SECTION STYLING --- */
         #scene-gallery {
-            width: 100%;
-            min-height: 100vh;
-            padding: 5rem 1.8rem;
+            padding: 5rem 1.8rem 5rem 1.8rem;
             text-align: center;
-            box-sizing: border-box;
-            background: transparent !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .gallery-envelope-container {
@@ -1303,15 +1300,31 @@
             user-select: none;
         }
 
-        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT --- */
+        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT (BACKGROUND FIT) --- */
         @media (max-width: 768px) {
+            #scene-story,
+            #scene-menu,
+            #scene-day,
+            #scene-entourage,
+            #scene-details,
+            #scene-gallery,
+            #scene-rsvp,
+            #scene-outro {
+                background-size: cover !important;
+                background-position: center top !important;
+                background-repeat: no-repeat !important;
+                background-attachment: scroll !important;
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+
             .story-editorial-card {
                 padding: 2.2rem 1rem 2rem 1rem !important;
             }
             .chapter-container { 
                 padding: 2rem 1rem !important;
                 width: 94% !important;
-                background: rgba(255, 255, 255, 0.60) !important;
+                background: rgba(255, 255, 255, 0.20) !important;
             }
 
             .png-envelope-container {
@@ -1365,7 +1378,7 @@
             .chapters-board-card {
                 padding: 2.2rem 1rem !important;
                 width: 92% !important;
-                background: rgba(255, 255, 255, 0.60) !important;
+                background: rgba(255, 255, 255, 0.20) !important;
             }
 
             .chapters-main-title { font-size: 1.8rem; letter-spacing: 3px; }
@@ -2012,7 +2025,7 @@
                 <div id="rsvp-confirmation" style="display: none; text-align: center; padding: 2rem 0;">
                     <p class="script-handwriting" style="color: var(--peony-deep) !important;">You're on the list.</p>
                     <p style="font-size: 0.9rem; margin-top: 10px; color: var(--text-dark);">
-                        We can'wait to celebrate with you.
+                        We can't wait to celebrate with you.
                     </p>
                 </div>
 
