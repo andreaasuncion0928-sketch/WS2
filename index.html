@@ -113,20 +113,18 @@
             display: none !important;
         }
 
-        /* --- UNIFIED BACKGROUND.JPG SETTINGS FOR ALL SUCCEEDING PAGES (LOCKED FLOWERS VISIBILITY) --- */
-        #scene-story,
+        /* --- UNIFIED BACKGROUND.JPG SETTINGS FOR ALL SUCCEEDING PAGES --- */
         #scene-menu,
         #scene-day,
         #scene-entourage,
         #scene-details,
         #scene-gallery,
-        #scene-rsvp,
-        #scene-outro {
+        #scene-rsvp {
             width: 100%;
             min-height: 100vh;
             background-image: linear-gradient(rgba(255, 253, 249, 0.12), rgba(253, 240, 244, 0.18)), url('background.jpg?v=mobile-fit');
             background-size: cover;
-            background-position: center top;
+            background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
@@ -317,11 +315,11 @@
             transform: translateY(-1px);
         }
 
-        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (20% OPACITY LOCK) --- */
+        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY --- */
         .chapter-container {
             max-width: 900px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.20) !important;
+            background: rgba(255, 255, 255, 0.60) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             color: var(--text-dark) !important;
@@ -329,7 +327,7 @@
             border-radius: 12px;
             box-shadow: 0 15px 45px rgba(173, 83, 98, 0.08);
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.9);
             margin: 2rem 0;
             text-align: center;
         }
@@ -561,23 +559,27 @@
             opacity: 0.8;
         }
 
-        /* --- WEDDING CHAPTERS MENU CARD WITH 20% TRANSLUCENCY --- */
+        /* --- WEDDING CHAPTERS STYLING CENTERED WITH MINIMALIST THIN COUNTDOWN FONT --- */
         #scene-menu {
-            padding: 2.5rem 1rem;
-            text-align: center;
+            width: 100%;
+            min-height: 100vh;
+            margin: 0 auto;
+            text-align: center !important;
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 2.5rem 1rem;
         }
 
         .chapters-board-card {
-            background: rgba(255, 255, 255, 0.20) !important;
+            background: rgba(255, 255, 255, 0.60) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 16px;
             padding: 3.5rem 2.5rem 3rem 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.9);
             box-shadow: 0 15px 45px rgba(185, 165, 160, 0.16);
             width: 100%;
             max-width: 920px;
@@ -671,7 +673,7 @@
             user-select: none;
         }
 
-        /* --- THE DAY (SCENE-DAY) STYLING WITH 20% OPACITY CARDS --- */
+        /* --- THE DAY (SCENE-DAY) STYLING WITH LEFT-ALIGNED BUTTONS --- */
         #scene-day {
             padding: 5rem 1.8rem 5rem 1.8rem;
             text-align: center;
@@ -773,6 +775,7 @@
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
+        /* LEFT-ALIGNED ACTION BUTTONS MATCHING VENUE TEXT ON DESKTOP */
         .day-card-actions {
             display: flex;
             align-items: center;
@@ -782,7 +785,7 @@
             width: 100%;
         }
 
-        /* --- THE ENTOURAGE (SCENE-ENTOURAGE) ADJUSTED WITH 20% OPACITY CARDS --- */
+        /* --- THE ENTOURAGE (SCENE-ENTOURAGE) ADJUSTED WITH 20% OPACITY --- */
         #scene-entourage {
             padding: 5.5rem 1.8rem 5rem 1.8rem;
             text-align: center;
@@ -1050,52 +1053,6 @@
             font-weight: 500;
         }
 
-        /* --- GALLERY SECTION STYLING --- */
-        #scene-gallery {
-            padding: 5rem 1.8rem 5rem 1.8rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .gallery-envelope-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
-            max-width: 1100px;
-            margin: 2rem auto;
-            width: 100%;
-        }
-
-        .photo-card {
-            width: 160px;
-            height: 200px;
-            background: #FFFFFF;
-            padding: 10px 10px 30px 10px;
-            border-radius: 4px;
-            box-shadow: 0 8px 20px rgba(173, 83, 98, 0.12);
-            transform: rotate(calc(var(--r, 0) * 1deg));
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .photo-card:hover {
-            transform: scale(1.08) rotate(0deg) !important;
-            z-index: 10;
-            box-shadow: 0 12px 30px rgba(173, 83, 98, 0.25);
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 2px;
-        }
-
         /* --- PROGRAM FLOW INFOGRAPHIC MODAL STYLING --- */
         .program-modal-overlay {
             position: fixed;
@@ -1300,19 +1257,17 @@
             user-select: none;
         }
 
-        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT (BACKGROUND FIT) --- */
+        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT --- */
         @media (max-width: 768px) {
-            #scene-story,
             #scene-menu,
             #scene-day,
             #scene-entourage,
             #scene-details,
             #scene-gallery,
-            #scene-rsvp,
-            #scene-outro {
-                background-size: cover !important;
+            #scene-rsvp {
+                background-size: contain !important;
                 background-position: center top !important;
-                background-repeat: no-repeat !important;
+                background-repeat: repeat-y !important;
                 background-attachment: scroll !important;
                 padding-left: 0.5rem !important;
                 padding-right: 0.5rem !important;
@@ -1324,7 +1279,7 @@
             .chapter-container { 
                 padding: 2rem 1rem !important;
                 width: 94% !important;
-                background: rgba(255, 255, 255, 0.20) !important;
+                background: rgba(255, 255, 255, 0.60) !important;
             }
 
             .png-envelope-container {
@@ -1378,7 +1333,7 @@
             .chapters-board-card {
                 padding: 2.2rem 1rem !important;
                 width: 92% !important;
-                background: rgba(255, 255, 255, 0.20) !important;
+                background: rgba(255, 255, 255, 0.60) !important;
             }
 
             .chapters-main-title { font-size: 1.8rem; letter-spacing: 3px; }
@@ -1459,6 +1414,7 @@
                 display: none;
             }
 
+            /* COMPACT HORIZONTAL SIDE-BY-SIDE MOBILE DETAILS TABS */
             #scene-details {
                 padding: 4rem 0.5rem 3.5rem 0.5rem !important;
             }
