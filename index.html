@@ -291,7 +291,7 @@
         .btn-magic, 
         .btn-day-action, 
         .btn-story-link {
-            background: #FFFFFF !important;
+            background: rgba(255, 255, 255, 0.85) !important;
             border: 1px solid var(--baby-pink) !important;
             color: var(--peony-deep) !important;
             padding: 8px 24px !important;
@@ -317,11 +317,11 @@
             transform: translateY(-1px);
         }
 
-        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (20% OPACITY) --- */
+        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (10% OPACITY FOR MAXIMUM FLOWER VISIBILITY) --- */
         .chapter-container {
             max-width: 900px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.20) !important;
+            background: rgba(255, 255, 255, 0.10) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             color: var(--text-dark) !important;
@@ -329,7 +329,7 @@
             border-radius: 12px;
             box-shadow: 0 15px 45px rgba(173, 83, 98, 0.08);
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.65);
             margin: 2rem 0;
             text-align: center;
         }
@@ -572,12 +572,12 @@
         }
 
         .chapters-board-card {
-            background: rgba(255, 255, 255, 0.20) !important;
+            background: rgba(255, 255, 255, 0.10) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 16px;
             padding: 3.5rem 2.5rem 3rem 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.65);
             box-shadow: 0 15px 45px rgba(185, 165, 160, 0.16);
             width: 100%;
             max-width: 920px;
@@ -711,10 +711,10 @@
         }
 
         .day-location-card {
-            background: rgba(255, 255, 255, 0.20) !important;
+            background: rgba(255, 255, 255, 0.10) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.65);
             border-radius: 12px;
             padding: 1.8rem 2.2rem;
             margin-bottom: 1.8rem;
@@ -822,10 +822,10 @@
         }
 
         .entourage-board-card {
-            background: rgba(255, 255, 255, 0.20) !important;
+            background: rgba(255, 255, 255, 0.10) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.65);
             border-radius: 16px;
             padding: 3rem 2rem 2.5rem 2rem;
             max-width: 1000px;
@@ -948,10 +948,10 @@
 
         .details-tab-btn {
             flex: 1;
-            background: rgba(255, 255, 255, 0.20) !important;
+            background: rgba(255, 255, 255, 0.10) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.85) !important;
+            border: 1px solid rgba(255, 255, 255, 0.65) !important;
             border-radius: 12px !important;
             padding: 12px 14px !important;
             font-family: var(--font-serif) !important;
@@ -971,22 +971,22 @@
         }
 
         .details-tab-btn:hover {
-            background: rgba(255, 255, 255, 0.35) !important;
+            background: rgba(255, 255, 255, 0.25) !important;
             transform: translateY(-1px);
         }
 
         .details-tab-btn.active-tab {
-            background: rgba(255, 255, 255, 0.70) !important;
+            background: rgba(255, 255, 255, 0.50) !important;
             border-color: var(--baby-pink) !important;
             color: var(--peony-deep) !important;
             box-shadow: 0 8px 25px rgba(255, 183, 206, 0.35) !important;
         }
 
         .details-panel-card {
-            background: rgba(255, 255, 255, 0.20) !important;
+            background: rgba(255, 255, 255, 0.10) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.65);
             border-radius: 16px;
             padding: 2.8rem 2.2rem;
             max-width: 860px;
@@ -1093,11 +1093,11 @@
             width: 100%;
             margin: 0 auto 1.5rem auto;
             padding: 12px;
-            background: rgba(255, 255, 255, 0.20) !important;
+            background: rgba(255, 255, 255, 0.10) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.65);
             box-shadow: 0 10px 30px rgba(185, 165, 160, 0.15);
         }
 
@@ -1331,7 +1331,7 @@
             user-select: none;
         }
 
-        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT (BACKGROUND FIT & SIDE FLOWERS VISIBLE) --- */
+        /* --- MOBILE RESPONSIVE LAYOUT (10% OPACITY CARDS & SIDE FLOWERS VISIBILITY) --- */
         @media (max-width: 768px) {
             #scene-story,
             #scene-menu,
@@ -1341,22 +1341,23 @@
             #scene-gallery,
             #scene-rsvp,
             #scene-outro {
-                background-size: 100% 100% !important;
+                background-size: cover !important;
                 background-position: center top !important;
                 background-repeat: no-repeat !important;
                 background-attachment: scroll !important;
-                padding-left: 0.5rem !important;
-                padding-right: 0.5rem !important;
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
             }
 
             .story-editorial-card {
                 padding: 2.2rem 1rem 2rem 1rem !important;
-                background: rgba(255, 255, 255, 0.20) !important;
+                background: rgba(255, 255, 255, 0.10) !important;
+                width: 84% !important;
             }
             .chapter-container { 
                 padding: 2rem 1rem !important;
-                width: 94% !important;
-                background: rgba(255, 255, 255, 0.20) !important;
+                width: 84% !important;
+                background: rgba(255, 255, 255, 0.10) !important;
             }
 
             .png-envelope-container {
@@ -1409,8 +1410,8 @@
 
             .chapters-board-card {
                 padding: 2.2rem 1rem !important;
-                width: 92% !important;
-                background: rgba(255, 255, 255, 0.20) !important;
+                width: 84% !important;
+                background: rgba(255, 255, 255, 0.10) !important;
             }
 
             .chapters-main-title { font-size: 1.8rem; letter-spacing: 3px; }
@@ -1432,7 +1433,7 @@
 
             /* LOCKED MOBILE STYLING FOR THE DAY PAGE */
             #scene-day {
-                padding: 4rem 0.5rem 3.5rem 0.5rem !important;
+                padding: 4rem 0.8rem 3.5rem 0.8rem !important;
             }
 
             .the-day-header-title {
@@ -1445,9 +1446,9 @@
                 text-align: center;
                 padding: 1.4rem 1rem;
                 gap: 0.8rem;
-                background: rgba(255, 255, 255, 0.20) !important;
+                background: rgba(255, 255, 255, 0.10) !important;
                 margin-bottom: 1.5rem;
-                width: 92% !important;
+                width: 84% !important;
             }
 
             .day-card-illustration {
@@ -1461,7 +1462,7 @@
 
             /* LOCKED MOBILE STYLING FOR THE ENTOURAGE PAGE */
             #scene-entourage {
-                padding: 5rem 0.5rem 3.5rem 0.5rem !important;
+                padding: 5rem 0.8rem 3.5rem 0.8rem !important;
             }
 
             .entourage-header-title {
@@ -1471,8 +1472,8 @@
 
             .entourage-board-card {
                 padding: 2.2rem 1rem 1.8rem 1rem !important;
-                background: rgba(255, 255, 255, 0.20) !important;
-                width: 92% !important;
+                background: rgba(255, 255, 255, 0.10) !important;
+                width: 84% !important;
             }
 
             .entourage-grid-3col {
@@ -1495,13 +1496,13 @@
 
             /* LOCKED MOBILE STYLING FOR THE DETAILS PAGE */
             #scene-details {
-                padding: 4rem 0.5rem 3.5rem 0.5rem !important;
+                padding: 4rem 0.8rem 3.5rem 0.8rem !important;
             }
 
             .details-tab-bar {
                 flex-direction: row !important;
                 gap: 6px;
-                width: 94%;
+                width: 84%;
             }
 
             .details-tab-btn {
@@ -1513,22 +1514,22 @@
 
             .details-panel-card {
                 padding: 1.8rem 1.2rem;
-                width: 94% !important;
-                background: rgba(255, 255, 255, 0.20) !important;
+                width: 84% !important;
+                background: rgba(255, 255, 255, 0.10) !important;
             }
 
             /* NOSTALGIC POLAROID GRID FOR MOBILE GALLERY VIEW */
             #scene-gallery {
-                padding: 2rem 0.5rem 1.5rem 0.5rem !important;
+                padding: 2rem 0.8rem 1.5rem 0.8rem !important;
             }
 
             .gallery-polaroid-grid {
                 grid-template-columns: repeat(5, 1fr) !important;
                 gap: 4px !important;
                 padding: 6px !important;
-                width: 96% !important;
+                width: 84% !important;
                 margin-bottom: 1rem !important;
-                background: rgba(255, 255, 255, 0.20) !important;
+                background: rgba(255, 255, 255, 0.10) !important;
             }
 
             .gallery-mini-card {
