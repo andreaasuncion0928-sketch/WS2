@@ -69,6 +69,22 @@
             scroll-behavior: smooth;
         }
 
+        /* --- GLOBAL IMMUTABLE BACKGROUND LAYER (LOCKED) --- */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(rgba(255, 253, 249, 0.12), rgba(253, 240, 244, 0.18)), url('background.jpg?v=mobile-fit');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            pointer-events: none;
+        }
+
         /* --- SAFE NATURAL WORD WRAPPING --- */
         h1, h2, h3, h4, h5, h6, p, span, a, button, div, label {
             word-break: normal !important;
@@ -111,22 +127,6 @@
 
         .stage.hidden {
             display: none !important;
-        }
-
-        /* --- UNIFIED BACKGROUND.JPG SETTINGS FOR ALL SUCCEEDING PAGES --- */
-        #scene-menu,
-        #scene-day,
-        #scene-entourage,
-        #scene-details,
-        #scene-gallery,
-        #scene-rsvp {
-            width: 100%;
-            min-height: 100vh;
-            background-image: linear-gradient(rgba(255, 253, 249, 0.12), rgba(253, 240, 244, 0.18)), url('background.jpg?v=mobile-fit');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
         }
 
         /* --- LAYER 1: ENCHANTED GATEWAY (SLOW, SEAMLESS DOWNWARD SLIDE) --- */
@@ -673,14 +673,23 @@
             user-select: none;
         }
 
-        /* --- THE DAY (SCENE-DAY) STYLING WITH LEFT-ALIGNED BUTTONS --- */
-        #scene-day {
-            padding: 5rem 1.8rem 5rem 1.8rem;
-            text-align: center;
+        /* --- STRICTLY LOCKED CHAPTER PAGES (THE DAY, ENTOURAGE, DETAILS) --- */
+        #scene-day,
+        #scene-entourage,
+        #scene-details {
+            width: 100%;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box;
+            background: transparent !important;
+        }
+
+        #scene-day {
+            padding: 5rem 1.8rem;
+            text-align: center;
         }
 
         .the-day-header-subtitle {
@@ -775,7 +784,6 @@
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
-        /* LEFT-ALIGNED ACTION BUTTONS MATCHING VENUE TEXT ON DESKTOP */
         .day-card-actions {
             display: flex;
             align-items: center;
@@ -789,10 +797,6 @@
         #scene-entourage {
             padding: 5.5rem 1.8rem 5rem 1.8rem;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
         .entourage-header-subtitle {
@@ -921,10 +925,6 @@
         #scene-details {
             padding: 5rem 1.8rem 5rem 1.8rem;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
         .details-header-title {
@@ -1051,6 +1051,52 @@
             color: #3D3537;
             text-transform: uppercase;
             font-weight: 500;
+        }
+
+        /* --- GALLERY SECTION WRAPPER & MASONRY/GRID CONTAINER --- */
+        #scene-gallery {
+            width: 100%;
+            min-height: 100vh;
+            padding: 5rem 1.8rem;
+            text-align: center;
+            box-sizing: border-box;
+            background: transparent !important;
+        }
+
+        .gallery-envelope-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 2rem auto;
+            width: 100%;
+        }
+
+        .photo-card {
+            width: 160px;
+            height: 200px;
+            background: #FFFFFF;
+            padding: 10px 10px 30px 10px;
+            border-radius: 4px;
+            box-shadow: 0 8px 20px rgba(173, 83, 98, 0.12);
+            transform: rotate(calc(var(--r, 0) * 1deg));
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.08) rotate(0deg) !important;
+            z-index: 10;
+            box-shadow: 0 12px 30px rgba(173, 83, 98, 0.25);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2px;
         }
 
         /* --- PROGRAM FLOW INFOGRAPHIC MODAL STYLING --- */
@@ -1259,20 +1305,6 @@
 
         /* --- MOBILE ENHANCED RESPONSIVE LAYOUT --- */
         @media (max-width: 768px) {
-            #scene-menu,
-            #scene-day,
-            #scene-entourage,
-            #scene-details,
-            #scene-gallery,
-            #scene-rsvp {
-                background-size: contain !important;
-                background-position: center top !important;
-                background-repeat: repeat-y !important;
-                background-attachment: scroll !important;
-                padding-left: 0.5rem !important;
-                padding-right: 0.5rem !important;
-            }
-
             .story-editorial-card {
                 padding: 2.2rem 1rem 2rem 1rem !important;
             }
@@ -1414,7 +1446,6 @@
                 display: none;
             }
 
-            /* COMPACT HORIZONTAL SIDE-BY-SIDE MOBILE DETAILS TABS */
             #scene-details {
                 padding: 4rem 0.5rem 3.5rem 0.5rem !important;
             }
@@ -1981,7 +2012,7 @@
                 <div id="rsvp-confirmation" style="display: none; text-align: center; padding: 2rem 0;">
                     <p class="script-handwriting" style="color: var(--peony-deep) !important;">You're on the list.</p>
                     <p style="font-size: 0.9rem; margin-top: 10px; color: var(--text-dark);">
-                        We can't wait to celebrate with you.
+                        We can'wait to celebrate with you.
                     </p>
                 </div>
 
