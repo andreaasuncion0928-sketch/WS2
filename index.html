@@ -317,7 +317,7 @@
             transform: translateY(-1px);
         }
 
-        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY --- */
+        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (20% OPACITY) --- */
         .chapter-container {
             max-width: 900px;
             width: 100%;
@@ -1050,7 +1050,7 @@
             font-weight: 500;
         }
 
-        /* --- GALLERY SECTION STYLING (LOCKED PAGE DIMENSIONS & NOSTALGIC COMPACT COLLAGE) --- */
+        /* --- GALLERY SECTION STYLING --- */
         #scene-gallery {
             padding: 3.5rem 1rem 3rem 1rem !important;
             text-align: center;
@@ -1085,7 +1085,6 @@
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
         }
 
-        /* DENSE NOSTALGIC POLAROID COLLAGE CONTAINER */
         .gallery-polaroid-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -1332,15 +1331,17 @@
             user-select: none;
         }
 
-        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT --- */
+        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT (BACKGROUND FIT & SIDE FLOWERS VISIBLE) --- */
         @media (max-width: 768px) {
+            #scene-story,
             #scene-menu,
             #scene-day,
             #scene-entourage,
             #scene-details,
             #scene-gallery,
-            #scene-rsvp {
-                background-size: cover !important;
+            #scene-rsvp,
+            #scene-outro {
+                background-size: 100% 100% !important;
                 background-position: center top !important;
                 background-repeat: no-repeat !important;
                 background-attachment: scroll !important;
@@ -1350,6 +1351,7 @@
 
             .story-editorial-card {
                 padding: 2.2rem 1rem 2rem 1rem !important;
+                background: rgba(255, 255, 255, 0.20) !important;
             }
             .chapter-container { 
                 padding: 2rem 1rem !important;
@@ -1428,6 +1430,7 @@
                 letter-spacing: 1.5px;
             }
 
+            /* LOCKED MOBILE STYLING FOR THE DAY PAGE */
             #scene-day {
                 padding: 4rem 0.5rem 3.5rem 0.5rem !important;
             }
@@ -1456,6 +1459,7 @@
                 justify-content: center !important;
             }
 
+            /* LOCKED MOBILE STYLING FOR THE ENTOURAGE PAGE */
             #scene-entourage {
                 padding: 5rem 0.5rem 3.5rem 0.5rem !important;
             }
@@ -1489,6 +1493,7 @@
                 display: none;
             }
 
+            /* LOCKED MOBILE STYLING FOR THE DETAILS PAGE */
             #scene-details {
                 padding: 4rem 0.5rem 3.5rem 0.5rem !important;
             }
@@ -1512,7 +1517,7 @@
                 background: rgba(255, 255, 255, 0.20) !important;
             }
 
-            /* COMPACT 5x2 NOSTALGIC POLAROID GRID FOR MOBILE VIEW */
+            /* NOSTALGIC POLAROID GRID FOR MOBILE GALLERY VIEW */
             #scene-gallery {
                 padding: 2rem 0.5rem 1.5rem 0.5rem !important;
             }
@@ -1523,6 +1528,7 @@
                 padding: 6px !important;
                 width: 96% !important;
                 margin-bottom: 1rem !important;
+                background: rgba(255, 255, 255, 0.20) !important;
             }
 
             .gallery-mini-card {
@@ -2018,7 +2024,7 @@
             </div>
         </section>
 
-        <!-- 8. GALLERY (LOCKED HEIGHT NOSTALGIC MICRO-COLLAGE PICTURES 11-20) -->
+        <!-- 8. GALLERY -->
         <section class="stage hidden" id="scene-gallery">
             <h2 class="gallery-header-title">MOMENTS ALONG THE WAY</h2>
             <p class="gallery-header-sub">OUR FAVORITE MEMORIES</p>
