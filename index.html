@@ -318,7 +318,7 @@
             transform: translateY(-1px);
         }
 
-        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (10% OPACITY) --- */
+        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (EXACTLY 10% OPACITY) --- */
         .chapter-container {
             max-width: 900px;
             width: 100%;
@@ -326,20 +326,20 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             color: var(--text-dark) !important;
-            padding: 2.5rem 2rem;
+            padding: 3.5rem 2.5rem;
             border-radius: 12px;
             box-shadow: 0 15px 45px rgba(173, 83, 98, 0.08);
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.65);
-            margin: 1rem 0;
+            margin: 2rem 0;
             text-align: center;
         }
 
         /* --- EDITORIAL OUR STORY SECTION --- */
         .story-editorial-card {
-            padding: 2.5rem 1.5rem !important;
+            padding: 3.5rem 2rem 3rem 2rem !important;
             max-width: 760px !important;
-            margin: 1rem auto !important;
+            margin: 1.5rem auto !important;
             text-align: center;
             position: relative;
         }
@@ -392,7 +392,7 @@
             line-height: 1.8;
             color: #4A4446;
             max-width: 580px;
-            margin: 0 auto 1.5rem auto;
+            margin: 0 auto 2.2rem auto;
             font-weight: 300;
             letter-spacing: 0.2px;
         }
@@ -434,7 +434,7 @@
             position: relative;
             display: inline-block;
             padding: 8px 12px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             max-width: 100%;
         }
 
@@ -485,7 +485,7 @@
             justify-content: center;
             gap: 12px;
             width: 140px;
-            margin: 0 auto 1.5rem auto;
+            margin: 0 auto 2.2rem auto;
             opacity: 0.75;
         }
 
@@ -577,7 +577,7 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 16px;
-            padding: 3rem 2rem 2.5rem 2rem;
+            padding: 3.5rem 2.5rem 3rem 2.5rem;
             border: 1px solid rgba(255, 255, 255, 0.65);
             box-shadow: 0 15px 45px rgba(185, 165, 160, 0.16);
             width: 100%;
@@ -623,7 +623,7 @@
             font-weight: 300 !important;
             color: #1A1415;
             letter-spacing: 1px;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             text-align: center !important;
             width: 100%;
             text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
@@ -672,16 +672,14 @@
             user-select: none;
         }
 
-        /* --- THE DAY (SCENE-DAY) SINGLE PANEL STYLING --- */
+        /* --- THE DAY (SCENE-DAY) STYLING --- */
         #scene-day {
-            padding: 2rem 1rem;
+            padding: 5rem 1.8rem 5rem 1.8rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            box-sizing: border-box;
         }
 
         .the-day-main-card {
@@ -807,7 +805,7 @@
 
         /* --- THE ENTOURAGE (SCENE-ENTOURAGE) --- */
         #scene-entourage {
-            padding: 3rem 1.8rem;
+            padding: 5.5rem 1.8rem 5rem 1.8rem;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -940,7 +938,7 @@
 
         /* --- THE DETAILS (SCENE-DETAILS) TABBED INTERFACE --- */
         #scene-details {
-            padding: 3rem 1.8rem;
+            padding: 5rem 1.8rem 5rem 1.8rem;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -1082,9 +1080,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh !important;
-            max-height: 100vh !important;
-            overflow: hidden !important;
+            min-height: 100vh !important;
             box-sizing: border-box;
         }
 
@@ -1398,7 +1394,7 @@
             user-select: none;
         }
 
-        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT (SINGLE-PAGE FIT & NO-REPEAT BACKGROUND) --- */
+        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT (NATURAL UNSTRETCHED BACKGROUND) --- */
         @media (max-width: 768px) {
             #scene-story,
             #scene-menu,
@@ -1408,15 +1404,15 @@
             #scene-gallery,
             #scene-rsvp,
             #scene-outro {
-                background-size: 100% 100vh !important;
+                background-size: cover !important;
                 background-position: center top !important;
-                background-repeat: no-repeat !important;
+                background-repeat: repeat-y !important;
                 background-attachment: scroll !important;
                 padding-left: 1rem !important;
                 padding-right: 1rem !important;
-                height: 100vh !important;
-                max-height: 100vh !important;
-                overflow: hidden !important;
+                min-height: 100vh !important;
+                height: auto !important;
+                overflow: visible !important;
                 box-sizing: border-box;
             }
 
@@ -1504,9 +1500,9 @@
                 letter-spacing: 1px;
             }
 
-            /* LOCKED SINGLE-PAGE MOBILE FIT FOR THE DAY */
+            /* MOBILE LAYOUT FOR THE DAY */
             #scene-day {
-                padding: 1.5rem 0.5rem !important;
+                padding: 2.5rem 0.5rem !important;
             }
 
             .the-day-main-card {
@@ -1568,9 +1564,9 @@
                 padding: 5px 12px !important;
             }
 
-            /* LOCKED SINGLE-PAGE MOBILE FIT FOR THE ENTOURAGE */
+            /* MOBILE LAYOUT FOR THE ENTOURAGE */
             #scene-entourage {
-                padding: 1.5rem 0.5rem !important;
+                padding: 2.5rem 0.5rem !important;
             }
 
             .entourage-header-title {
@@ -1628,9 +1624,9 @@
                 display: none !important;
             }
 
-            /* LOCKED SINGLE-PAGE MOBILE FIT FOR THE DETAILS */
+            /* MOBILE LAYOUT FOR THE DETAILS */
             #scene-details {
-                padding: 1.5rem 0.5rem !important;
+                padding: 2.5rem 0.5rem !important;
             }
 
             .details-header-title {
@@ -1676,7 +1672,9 @@
 
             /* NOSTALGIC POLAROID GRID FOR MOBILE GALLERY VIEW */
             #scene-gallery {
-                padding: 1.5rem 0.5rem !important;
+                padding: 2rem 0.5rem 1.5rem 0.5rem !important;
+                height: auto !important;
+                max-height: none !important;
             }
 
             .gallery-polaroid-grid {
@@ -1962,7 +1960,7 @@
             </div>
         </section>
 
-        <!-- 5. THE DAY (COMPACT SINGLE-SCREEN STRUCTURE) -->
+        <!-- 5. THE DAY -->
         <section class="stage hidden" id="scene-day">
             <div class="the-day-main-card">
                 <div>
