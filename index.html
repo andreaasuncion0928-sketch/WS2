@@ -317,7 +317,7 @@
             transform: translateY(-1px);
         }
 
-        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (10% OPACITY FOR MAXIMUM FLOWER VISIBILITY) --- */
+        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (EXACTLY 10% OPACITY) --- */
         .chapter-container {
             max-width: 900px;
             width: 100%;
@@ -1331,7 +1331,7 @@
             user-select: none;
         }
 
-        /* --- MOBILE RESPONSIVE LAYOUT (10% OPACITY CARDS & SIDE FLOWERS VISIBILITY) --- */
+        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT (SIDE FLOWERS PROPERLY FRAMED) --- */
         @media (max-width: 768px) {
             #scene-story,
             #scene-menu,
@@ -1341,9 +1341,9 @@
             #scene-gallery,
             #scene-rsvp,
             #scene-outro {
-                background-size: cover !important;
+                background-size: 100% auto !important;
                 background-position: center top !important;
-                background-repeat: no-repeat !important;
+                background-repeat: repeat-y !important;
                 background-attachment: scroll !important;
                 padding-left: 1.5rem !important;
                 padding-right: 1.5rem !important;
@@ -1352,11 +1352,11 @@
             .story-editorial-card {
                 padding: 2.2rem 1rem 2rem 1rem !important;
                 background: rgba(255, 255, 255, 0.10) !important;
-                width: 84% !important;
+                width: 80% !important;
             }
             .chapter-container { 
                 padding: 2rem 1rem !important;
-                width: 84% !important;
+                width: 80% !important;
                 background: rgba(255, 255, 255, 0.10) !important;
             }
 
@@ -1410,7 +1410,7 @@
 
             .chapters-board-card {
                 padding: 2.2rem 1rem !important;
-                width: 84% !important;
+                width: 80% !important;
                 background: rgba(255, 255, 255, 0.10) !important;
             }
 
@@ -1433,7 +1433,7 @@
 
             /* LOCKED MOBILE STYLING FOR THE DAY PAGE */
             #scene-day {
-                padding: 4rem 0.8rem 3.5rem 0.8rem !important;
+                padding: 4rem 0.5rem 3.5rem 0.5rem !important;
             }
 
             .the-day-header-title {
@@ -1448,7 +1448,7 @@
                 gap: 0.8rem;
                 background: rgba(255, 255, 255, 0.10) !important;
                 margin-bottom: 1.5rem;
-                width: 84% !important;
+                width: 80% !important;
             }
 
             .day-card-illustration {
@@ -1462,7 +1462,7 @@
 
             /* LOCKED MOBILE STYLING FOR THE ENTOURAGE PAGE */
             #scene-entourage {
-                padding: 5rem 0.8rem 3.5rem 0.8rem !important;
+                padding: 5rem 0.5rem 3.5rem 0.5rem !important;
             }
 
             .entourage-header-title {
@@ -1473,7 +1473,7 @@
             .entourage-board-card {
                 padding: 2.2rem 1rem 1.8rem 1rem !important;
                 background: rgba(255, 255, 255, 0.10) !important;
-                width: 84% !important;
+                width: 80% !important;
             }
 
             .entourage-grid-3col {
@@ -1496,13 +1496,13 @@
 
             /* LOCKED MOBILE STYLING FOR THE DETAILS PAGE */
             #scene-details {
-                padding: 4rem 0.8rem 3.5rem 0.8rem !important;
+                padding: 4rem 0.5rem 3.5rem 0.5rem !important;
             }
 
             .details-tab-bar {
                 flex-direction: row !important;
                 gap: 6px;
-                width: 84%;
+                width: 80%;
             }
 
             .details-tab-btn {
@@ -1514,20 +1514,20 @@
 
             .details-panel-card {
                 padding: 1.8rem 1.2rem;
-                width: 84% !important;
+                width: 80% !important;
                 background: rgba(255, 255, 255, 0.10) !important;
             }
 
             /* NOSTALGIC POLAROID GRID FOR MOBILE GALLERY VIEW */
             #scene-gallery {
-                padding: 2rem 0.8rem 1.5rem 0.8rem !important;
+                padding: 2rem 0.5rem 1.5rem 0.5rem !important;
             }
 
             .gallery-polaroid-grid {
                 grid-template-columns: repeat(5, 1fr) !important;
                 gap: 4px !important;
                 padding: 6px !important;
-                width: 84% !important;
+                width: 80% !important;
                 margin-bottom: 1rem !important;
                 background: rgba(255, 255, 255, 0.10) !important;
             }
