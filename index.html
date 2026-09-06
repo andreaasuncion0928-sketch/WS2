@@ -114,22 +114,24 @@
         }
 
         /* --- UNIFIED BACKGROUND.JPG SETTINGS FOR ALL SUCCEEDING PAGES --- */
+        #scene-story,
         #scene-menu,
         #scene-day,
         #scene-entourage,
         #scene-details,
         #scene-gallery,
-        #scene-rsvp {
+        #scene-rsvp,
+        #scene-outro {
             width: 100%;
             min-height: 100vh;
             background-image: linear-gradient(rgba(255, 253, 249, 0.12), rgba(253, 240, 244, 0.18)), url('background.jpg?v=mobile-fit');
             background-size: cover;
-            background-position: center;
+            background-position: center top;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
 
-        /* --- LAYER 1: ENCHANTED GATEWAY (SLOW, SEAMLESS DOWNWARD SLIDE) --- */
+        /* --- LAYER 1: ENCHANTED GATEWAY --- */
         .fairytale-gateway-screen {
             position: fixed;
             top: 0;
@@ -319,7 +321,7 @@
         .chapter-container {
             max-width: 900px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.60) !important;
+            background: rgba(255, 255, 255, 0.20) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             color: var(--text-dark) !important;
@@ -327,7 +329,7 @@
             border-radius: 12px;
             box-shadow: 0 15px 45px rgba(173, 83, 98, 0.08);
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.85);
             margin: 2rem 0;
             text-align: center;
         }
@@ -559,27 +561,23 @@
             opacity: 0.8;
         }
 
-        /* --- WEDDING CHAPTERS STYLING CENTERED WITH MINIMALIST THIN COUNTDOWN FONT --- */
+        /* --- WEDDING CHAPTERS MENU CARD --- */
         #scene-menu {
-            width: 100%;
-            min-height: 100vh;
-            margin: 0 auto;
-            text-align: center !important;
-            position: relative;
+            padding: 2.5rem 1rem;
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2.5rem 1rem;
         }
 
         .chapters-board-card {
-            background: rgba(255, 255, 255, 0.60) !important;
+            background: rgba(255, 255, 255, 0.20) !important;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 16px;
             padding: 3.5rem 2.5rem 3rem 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.85);
             box-shadow: 0 15px 45px rgba(185, 165, 160, 0.16);
             width: 100%;
             max-width: 920px;
@@ -673,7 +671,7 @@
             user-select: none;
         }
 
-        /* --- THE DAY (SCENE-DAY) STYLING WITH LEFT-ALIGNED BUTTONS --- */
+        /* --- THE DAY (SCENE-DAY) STYLING --- */
         #scene-day {
             padding: 5rem 1.8rem 5rem 1.8rem;
             text-align: center;
@@ -775,7 +773,6 @@
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
-        /* LEFT-ALIGNED ACTION BUTTONS MATCHING VENUE TEXT ON DESKTOP */
         .day-card-actions {
             display: flex;
             align-items: center;
@@ -785,7 +782,7 @@
             width: 100%;
         }
 
-        /* --- THE ENTOURAGE (SCENE-ENTOURAGE) ADJUSTED WITH 20% OPACITY --- */
+        /* --- THE ENTOURAGE (SCENE-ENTOURAGE) --- */
         #scene-entourage {
             padding: 5.5rem 1.8rem 5rem 1.8rem;
             text-align: center;
@@ -1053,6 +1050,84 @@
             font-weight: 500;
         }
 
+        /* --- GALLERY SECTION STYLING (LOCKED PAGE DIMENSIONS & NOSTALGIC COMPACT COLLAGE) --- */
+        #scene-gallery {
+            padding: 3.5rem 1rem 3rem 1rem !important;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh !important;
+            max-height: 100vh !important;
+            overflow: hidden !important;
+            box-sizing: border-box;
+        }
+
+        .gallery-header-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 4vw, 2.4rem);
+            letter-spacing: clamp(2px, 1vw, 5px);
+            color: #1A1415;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.1rem;
+            text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
+        }
+
+        .gallery-header-sub {
+            color: var(--champagne-gold);
+            font-size: clamp(0.68rem, 1.8vw, 0.82rem);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+        }
+
+        /* DENSE NOSTALGIC POLAROID COLLAGE CONTAINER */
+        .gallery-polaroid-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            max-width: 720px;
+            width: 100%;
+            margin: 0 auto 1.5rem auto;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.20) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 10px 30px rgba(185, 165, 160, 0.15);
+        }
+
+        .gallery-mini-card {
+            background: #FFFFFF;
+            padding: 5px 5px 14px 5px;
+            border-radius: 3px;
+            box-shadow: 0 4px 12px rgba(173, 83, 98, 0.15);
+            transform: rotate(calc(var(--r, 0) * 1deg));
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-mini-card:hover {
+            transform: scale(1.15) rotate(0deg) !important;
+            z-index: 30;
+            box-shadow: 0 10px 25px rgba(173, 83, 98, 0.3);
+        }
+
+        .gallery-mini-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 1px;
+            display: block;
+            filter: sepia(0.18) contrast(1.02) brightness(0.98);
+        }
+
         /* --- PROGRAM FLOW INFOGRAPHIC MODAL STYLING --- */
         .program-modal-overlay {
             position: fixed;
@@ -1265,9 +1340,9 @@
             #scene-details,
             #scene-gallery,
             #scene-rsvp {
-                background-size: contain !important;
+                background-size: cover !important;
                 background-position: center top !important;
-                background-repeat: repeat-y !important;
+                background-repeat: no-repeat !important;
                 background-attachment: scroll !important;
                 padding-left: 0.5rem !important;
                 padding-right: 0.5rem !important;
@@ -1279,7 +1354,7 @@
             .chapter-container { 
                 padding: 2rem 1rem !important;
                 width: 94% !important;
-                background: rgba(255, 255, 255, 0.60) !important;
+                background: rgba(255, 255, 255, 0.20) !important;
             }
 
             .png-envelope-container {
@@ -1333,7 +1408,7 @@
             .chapters-board-card {
                 padding: 2.2rem 1rem !important;
                 width: 92% !important;
-                background: rgba(255, 255, 255, 0.60) !important;
+                background: rgba(255, 255, 255, 0.20) !important;
             }
 
             .chapters-main-title { font-size: 1.8rem; letter-spacing: 3px; }
@@ -1414,7 +1489,6 @@
                 display: none;
             }
 
-            /* COMPACT HORIZONTAL SIDE-BY-SIDE MOBILE DETAILS TABS */
             #scene-details {
                 padding: 4rem 0.5rem 3.5rem 0.5rem !important;
             }
@@ -1436,6 +1510,23 @@
                 padding: 1.8rem 1.2rem;
                 width: 94% !important;
                 background: rgba(255, 255, 255, 0.20) !important;
+            }
+
+            /* COMPACT 5x2 NOSTALGIC POLAROID GRID FOR MOBILE VIEW */
+            #scene-gallery {
+                padding: 2rem 0.5rem 1.5rem 0.5rem !important;
+            }
+
+            .gallery-polaroid-grid {
+                grid-template-columns: repeat(5, 1fr) !important;
+                gap: 4px !important;
+                padding: 6px !important;
+                width: 96% !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .gallery-mini-card {
+                padding: 3px 3px 8px 3px !important;
             }
 
             .program-modal-container {
@@ -1467,7 +1558,6 @@
             .story-script-heading { font-size: 1.5rem; }
             .story-body-text { font-size: 0.85rem; line-height: 1.6; }
 
-            .photo-card { width: 95px; height: 120px; }
             .memory-photo-card { flex: 0 0 135px; height: 175px; }
         }
     </style>
@@ -1860,7 +1950,7 @@
             </div>
         </section>
 
-        <!-- 7. DETAILS (SCENE-DETAILS WITH ELEGANT MINIMALIST 20% TRANSLUCENT TABBED PANELS) -->
+        <!-- 7. DETAILS (SCENE-DETAILS) -->
         <section class="stage hidden" id="scene-details">
             <h2 class="details-header-title">THE DETAILS</h2>
 
@@ -1877,7 +1967,7 @@
                 </button>
             </div>
 
-            <!-- SINGLE TRANSLUCENT CONTENT PANEL CONTAINER (20% OPACITY) -->
+            <!-- SINGLE TRANSLUCENT CONTENT PANEL CONTAINER -->
             <div class="details-panel-card">
                 <!-- TAB 1: DRESS CODE -->
                 <div class="details-tab-content active-content" id="tab-dress-code">
@@ -1928,24 +2018,22 @@
             </div>
         </section>
 
-        <!-- GALLERY -->
+        <!-- 8. GALLERY (LOCKED HEIGHT NOSTALGIC MICRO-COLLAGE PICTURES 11-20) -->
         <section class="stage hidden" id="scene-gallery">
-            <h2 class="chapter-title">MOMENTS ALONG THE WAY</h2>
-            <p style="color: var(--champagne-gold); font-size: 0.85rem; letter-spacing: 1.5px;">
-                OUR FAVORITE MEMORIES
-            </p>
+            <h2 class="gallery-header-title">MOMENTS ALONG THE WAY</h2>
+            <p class="gallery-header-sub">OUR FAVORITE MEMORIES</p>
 
-            <div class="gallery-envelope-container" id="gallery-container"></div>
+            <div class="gallery-polaroid-grid" id="gallery-container"></div>
 
-            <button class="btn-day-action" onclick="scrollToSection('scene-menu')" style="margin-top: 2rem;">
+            <button class="btn-day-action" onclick="scrollToSection('scene-menu')">
                 ← Back to Chapters
             </button>
         </section>
 
-        <!-- RSVP -->
+        <!-- 9. RSVP -->
         <section class="stage hidden" id="scene-rsvp">
             <article class="chapter-container fade-in-up" style="max-width: 550px;">
-                <h2 class="chapter-title">WE'VESAVED YOU A SEAT.</h2>
+                <h2 class="chapter-title">WE'VE SAVED YOU A SEAT.</h2>
                 <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted);">
                     Please let us know if you'll be joining us.
                 </p>
@@ -2054,9 +2142,10 @@
             }
         };
 
+        /* GALLERY IMAGES UPDATED STRICTLY TO PICTURE11.JPG - PICTURE20.JPG */
         const galleryImages = [
-            "photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg",
-            "photo6.jpg", "photo7.jpg", "photo8.jpg", "photo9.jpg", "photo10.jpg"
+            "picture11.jpg", "picture12.jpg", "picture13.jpg", "picture14.jpg", "picture15.jpg",
+            "picture16.jpg", "picture17.jpg", "picture18.jpg", "picture19.jpg", "picture20.jpg"
         ];
 
         const entourageData = [
@@ -2150,7 +2239,7 @@
             }
         }
 
-        /* PREPARES INDIVIDUAL LETTER SPANS FOR MAGICAL TEXT REVEAL WITHOUT SLICING WORDS */
+        /* PREPARES INDIVIDUAL LETTER SPANS FOR MAGICAL TEXT REVEAL */
         function prepareMagicalHeadlineText() {
             const headlineEl = document.getElementById('magical-married-title');
             if (!headlineEl) return;
@@ -2181,7 +2270,7 @@
             });
         }
 
-        /* SIMULTANEOUS (ALL-AT-ONCE) SLOW WHITE CLOUD MIST MAGICAL REVEAL */
+        /* SIMULTANEOUS SLOW WHITE CLOUD MIST MAGICAL REVEAL */
         function playMagicalHeadlineReveal() {
             const cloudWrapper = document.getElementById('cloud-wrapper');
             const glyphs = document.querySelectorAll('#magical-married-title .story-glyph');
@@ -2195,7 +2284,7 @@
             });
         }
 
-        /* 1. ENVELOPE CLICK -> IMMEDIATELY STARTS AUDIO & REVEALS 2ND PAGE SLIDING UP */
+        /* 1. ENVELOPE CLICK */
         function openEnvelopeAndStartVideo(event) {
             const gateway = document.getElementById('desk-gateway');
             const bgMusic = document.getElementById('bg-music');
@@ -2210,13 +2299,13 @@
             proceedToCordiallyInvitedSeamless();
         }
 
-        /* REVEALS ELENA & ADRIAN PAGE VIA POP-UP ANIMATION */
+        /* REVEALS ELENA & ADRIAN PAGE */
         function proceedToCordiallyInvitedSeamless() {
             const inviteScene = document.getElementById('scene-invite-card');
             inviteScene.classList.add('active-overlay');
         }
 
-        /* 2. READ OUR STORY CLICK -> CONTINUOUS SONG.MP3 PLAYBACK + SHOWS OUR STORY PAGE */
+        /* 2. READ OUR STORY CLICK */
         function openOurStorySection() {
             const inviteScene = document.getElementById('scene-invite-card');
             const storyScene = document.getElementById('scene-story');
@@ -2237,7 +2326,6 @@
                 storyScene.classList.add('scene-story-animated');
                 storyScene.scrollIntoView({ behavior: 'smooth' });
                 
-                // Trigger Simultaneous Cloud Fog Slow Reveal
                 playMagicalHeadlineReveal();
             });
         }
@@ -2267,7 +2355,7 @@
             });
         }
 
-        /* 3. VIEW THE WEDDING DETAILS CLICK -> SHOWS WEDDING CHAPTERS MENU */
+        /* 3. VIEW THE WEDDING DETAILS CLICK */
         function switchSoundtrackAndGoMenu() {
             const bgMusic = document.getElementById('bg-music');
             if (bgMusic && bgMusic.paused) {
@@ -2327,13 +2415,14 @@
             `).join('');
         }
 
+        /* RENDERS COMPACT NOSTALGIC POLAROID GRID FOR PICTURE11.JPG TO PICTURE20.JPG */
         function renderGallery() {
             const container = document.getElementById('gallery-container');
             container.innerHTML = galleryImages.map((src, idx) => {
-                const randomRot = (Math.random() * 12 - 6).toFixed(1);
+                const randomRot = ((idx % 2 === 0 ? 1 : -1) * (Math.random() * 4 + 2)).toFixed(1);
                 return `
-                    <div class="photo-card" style="--r: ${randomRot};" onclick="openLightbox('${src}')">
-                        <img src="${src}" alt="Gallery photo ${idx + 1}" onerror="this.src='https://via.placeholder.com/150?text=Photo+${idx+1}'">
+                    <div class="gallery-mini-card" style="--r: ${randomRot};" onclick="openLightbox('${src}')">
+                        <img src="${src}" alt="Memory ${idx + 11}" onerror="this.onerror=null; if(this.src.endsWith('.jpg')){this.src='picture${idx+11}.jpeg';}else if(this.src.endsWith('.jpeg')){this.src='picture${idx+11}.png';}">
                     </div>
                 `;
             }).join('');
@@ -2350,7 +2439,7 @@
                     if (this.src.endsWith('.jpg')) {
                         this.src = this.src.replace('.jpg', '.jpeg');
                     } else if (this.src.endsWith('.jpeg')) {
-                        this.src = this.src.replace('.jpeg', '.jpg');
+                        this.src = this.src.replace('.jpeg', '.png');
                     }
                     this.onerror = null;
                 };
