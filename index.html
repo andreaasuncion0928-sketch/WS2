@@ -1127,6 +1127,49 @@
             filter: sepia(0.18) contrast(1.02) brightness(0.98);
         }
 
+        /* --- RSVP STYLING --- */
+        .rsvp-qr-code-img {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            margin: 1.2rem auto 1rem auto;
+            display: block;
+            background: #FFFFFF;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(173, 83, 98, 0.12);
+            border: 1px solid rgba(255, 183, 206, 0.4);
+        }
+
+        .rsvp-subtext-heading {
+            font-family: var(--font-serif);
+            font-size: clamp(0.95rem, 2.5vw, 1.25rem);
+            color: var(--peony-deep);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        .rsvp-body-lead {
+            font-family: var(--font-sans);
+            font-size: clamp(0.82rem, 2vw, 0.92rem);
+            color: #3D3537;
+            line-height: 1.6;
+            margin-bottom: 0.6rem;
+            font-weight: 400;
+        }
+
+        .rsvp-body-heart {
+            font-family: var(--font-serif);
+            font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+            color: var(--peony-deep);
+            font-style: italic;
+            font-weight: 500;
+            margin-top: 0.8rem;
+        }
+
         /* --- PROGRAM FLOW INFOGRAPHIC MODAL STYLING --- */
         .program-modal-overlay {
             position: fixed;
@@ -1534,6 +1577,11 @@
 
             .gallery-mini-card {
                 padding: 3px 3px 8px 3px !important;
+            }
+
+            .rsvp-qr-code-img {
+                width: 130px;
+                height: 130px;
             }
 
             .program-modal-container {
@@ -2037,50 +2085,24 @@
             </button>
         </section>
 
-        <!-- 9. RSVP -->
+        <!-- 9. RSVP (UPDATED CONTENT WITH SAMPLEQR.PNG) -->
         <section class="stage hidden" id="scene-rsvp">
             <article class="chapter-container fade-in-up" style="max-width: 550px;">
-                <h2 class="chapter-title">WE'VE SAVED YOU A SEAT.</h2>
-                <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted);">
-                    Please let us know if you'll be joining us.
+                <h2 class="rsvp-subtext-heading">ONE LAST THING…</h2>
+                <p class="rsvp-body-lead">
+                    You’ve made it this far, so there’s just one thing left to ask:<br>
+                    <strong>Will you celebrate with us? 🥂</strong><br>
+                    Let us know if we can count you in.
                 </p>
 
-                <form class="rsvp-form" id="rsvp-form" onsubmit="submitRSVP(event)">
-                    <div class="form-group">
-                        <label for="rsvp-name">Your Name</label>
-                        <input type="text" id="rsvp-name" required placeholder="Enter full name">
-                    </div>
+                <!-- INTEGRATED QR CODE FOR RSVP -->
+                <img src="sampleQR.png" alt="Scan to RSVP" class="rsvp-qr-code-img" id="rsvp-qr-code">
 
-                    <div class="form-group">
-                        <label for="rsvp-attend">Will You Join Us?</label>
-                        <select id="rsvp-attend" required>
-                            <option value="Happily, yes">Happily, yes</option>
-                            <option value="Regretfully, no">Regretfully, no</option>
-                        </select>
-                    </div>
+                <p class="rsvp-body-heart">
+                    We’d really love to have you there.
+                </p>
 
-                    <div class="form-group">
-                        <label for="rsvp-guests">Number of Guests</label>
-                        <select id="rsvp-guests">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn-day-action" style="margin-top: 1rem;">
-                        Confirm RSVP →
-                    </button>
-                </form>
-
-                <div id="rsvp-confirmation" style="display: none; text-align: center; padding: 2rem 0;">
-                    <p class="script-handwriting" style="color: var(--peony-deep) !important;">You're on the list.</p>
-                    <p style="font-size: 0.9rem; margin-top: 10px; color: var(--text-dark);">
-                        We can't wait to celebrate with you.
-                    </p>
-                </div>
-
-                <div style="text-align: center; margin-top: 2rem;">
+                <div style="text-align: center; margin-top: 1.8rem;">
                     <button class="btn-day-action" onclick="scrollToSection('scene-menu')">← Back to Chapters</button>
                 </div>
             </article>
@@ -2226,6 +2248,20 @@
                         this.src = '2ndpage.png';
                     } else if (this.src.endsWith('.png')) {
                         this.src = '2ndpage.PNG';
+                    }
+                };
+            }
+
+            // Fallback for sampleQR.png
+            const qrImg = document.getElementById('rsvp-qr-code');
+            if (qrImg) {
+                qrImg.onerror = function() {
+                    if (this.src.endsWith('.png')) {
+                        this.src = 'sampleQR.jpg';
+                    } else if (this.src.endsWith('.jpg')) {
+                        this.src = 'sampleQR.jpeg';
+                    } else if (this.src.endsWith('.jpeg')) {
+                        this.src = 'sampleQR.PNG';
                     }
                 };
             }
@@ -2461,22 +2497,6 @@
             if (modal) {
                 modal.classList.remove('active');
             }
-        }
-
-        function submitRSVP(e) {
-            e.preventDefault();
-            const form = document.getElementById('rsvp-form');
-            const confirm = document.getElementById('rsvp-confirmation');
-
-            form.style.opacity = '0';
-            setTimeout(() => {
-                form.style.display = 'none';
-                confirm.style.display = 'block';
-
-                setTimeout(() => {
-                    scrollToSection('scene-outro');
-                }, 3500);
-            }, 500);
         }
 
         /* RE-ENGINEERED SUBTLE, DREAMY, SLOW ORGANIC PETALS SYSTEM */
