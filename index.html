@@ -107,6 +107,7 @@
             justify-content: center;
             align-items: center;
             padding: 2rem 1rem;
+            box-sizing: border-box;
         }
 
         .stage.hidden {
@@ -317,7 +318,7 @@
             transform: translateY(-1px);
         }
 
-        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (EXACTLY 10% OPACITY) --- */
+        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (10% OPACITY) --- */
         .chapter-container {
             max-width: 900px;
             width: 100%;
@@ -325,20 +326,20 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             color: var(--text-dark) !important;
-            padding: 3.5rem 2.5rem;
+            padding: 2.5rem 2rem;
             border-radius: 12px;
             box-shadow: 0 15px 45px rgba(173, 83, 98, 0.08);
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.65);
-            margin: 2rem 0;
+            margin: 1rem 0;
             text-align: center;
         }
 
         /* --- EDITORIAL OUR STORY SECTION --- */
         .story-editorial-card {
-            padding: 3.5rem 2rem 3rem 2rem !important;
+            padding: 2.5rem 1.5rem !important;
             max-width: 760px !important;
-            margin: 1.5rem auto !important;
+            margin: 1rem auto !important;
             text-align: center;
             position: relative;
         }
@@ -391,7 +392,7 @@
             line-height: 1.8;
             color: #4A4446;
             max-width: 580px;
-            margin: 0 auto 2.2rem auto;
+            margin: 0 auto 1.5rem auto;
             font-weight: 300;
             letter-spacing: 0.2px;
         }
@@ -433,7 +434,7 @@
             position: relative;
             display: inline-block;
             padding: 8px 12px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             max-width: 100%;
         }
 
@@ -484,7 +485,7 @@
             justify-content: center;
             gap: 12px;
             width: 140px;
-            margin: 0 auto 2.2rem auto;
+            margin: 0 auto 1.5rem auto;
             opacity: 0.75;
         }
 
@@ -576,7 +577,7 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 16px;
-            padding: 3.5rem 2.5rem 3rem 2.5rem;
+            padding: 3rem 2rem 2.5rem 2rem;
             border: 1px solid rgba(255, 255, 255, 0.65);
             box-shadow: 0 15px 45px rgba(185, 165, 160, 0.16);
             width: 100%;
@@ -622,7 +623,7 @@
             font-weight: 300 !important;
             color: #1A1415;
             letter-spacing: 1px;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             text-align: center !important;
             width: 100%;
             text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
@@ -671,67 +672,89 @@
             user-select: none;
         }
 
-        /* --- THE DAY (SCENE-DAY) STYLING --- */
+        /* --- THE DAY (SCENE-DAY) SINGLE PANEL STYLING --- */
         #scene-day {
-            padding: 5rem 1.8rem 5rem 1.8rem;
+            padding: 2rem 1rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .the-day-main-card {
+            background: rgba(255, 255, 255, 0.10) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 16px;
+            padding: 2.2rem 1.8rem;
+            max-width: 860px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(185, 165, 160, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
         }
 
         .the-day-header-subtitle {
             font-family: var(--font-sans);
-            font-size: clamp(0.85rem, 2.3vw, 1.05rem);
+            font-size: clamp(0.75rem, 2vw, 0.95rem);
             color: #2D2527;
             font-weight: 400;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
             text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
         }
 
         .the-day-header-title {
             font-family: var(--font-serif);
-            font-size: clamp(1.8rem, 5vw, 2.8rem);
-            letter-spacing: clamp(3px, 1.2vw, 7px);
+            font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+            letter-spacing: clamp(2px, 1vw, 6px);
             color: #1A1415;
             font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
             text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
         }
 
         .the-day-header-desc {
             font-family: var(--font-sans);
-            font-size: clamp(0.85rem, 2.2vw, 1.02rem);
+            font-size: clamp(0.78rem, 2vw, 0.92rem);
             color: #3D3537;
             font-weight: 400;
-            margin-bottom: 2.2rem;
+            margin-bottom: 0.8rem;
             text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
         }
 
-        .day-location-card {
-            background: rgba(255, 255, 255, 0.10) !important;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.65);
+        .day-venues-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            align-items: center;
+        }
+
+        .day-venue-subcard {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             border-radius: 12px;
-            padding: 1.8rem 2.2rem;
-            margin-bottom: 1.8rem;
+            padding: 1.2rem 1.4rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 2rem;
+            gap: 1.2rem;
             text-align: left;
-            max-width: 860px;
             width: 100%;
-            box-shadow: 0 10px 30px rgba(185, 165, 160, 0.15);
+            box-shadow: 0 6px 18px rgba(185, 165, 160, 0.08);
         }
 
         .day-card-illustration {
-            width: 130px;
+            width: 90px;
             height: auto;
-            max-height: 100px;
+            max-height: 80px;
             object-fit: contain;
             opacity: 0.85;
             flex-shrink: 0;
@@ -744,32 +767,32 @@
 
         .day-card-venue-title {
             font-family: var(--font-serif);
-            font-size: clamp(1.2rem, 3.2vw, 1.7rem);
-            letter-spacing: 2px;
+            font-size: clamp(1.05rem, 2.8vw, 1.45rem);
+            letter-spacing: 1.5px;
             color: #1A1415;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .day-card-datetime {
+            font-family: var(--font-serif);
+            font-size: clamp(0.75rem, 1.8vw, 0.88rem);
+            letter-spacing: 1px;
+            color: #7D2D3E;
             font-weight: 600;
             text-transform: uppercase;
             margin-bottom: 0.3rem;
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
-        .day-card-datetime {
-            font-family: var(--font-serif);
-            font-size: clamp(0.8rem, 2vw, 0.95rem);
-            letter-spacing: 1.5px;
-            color: #7D2D3E;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 0.4rem;
-            text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
-        }
-
         .day-card-description {
             font-family: var(--font-sans);
-            font-size: clamp(0.82rem, 2vw, 0.92rem);
+            font-size: clamp(0.78rem, 1.8vw, 0.85rem);
             color: #3D3537;
             font-weight: 400;
-            margin-bottom: 1rem;
+            margin-bottom: 0.6rem;
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
@@ -777,14 +800,14 @@
             display: flex;
             align-items: center;
             justify-content: flex-start !important;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
             width: 100%;
         }
 
         /* --- THE ENTOURAGE (SCENE-ENTOURAGE) --- */
         #scene-entourage {
-            padding: 5.5rem 1.8rem 5rem 1.8rem;
+            padding: 3rem 1.8rem;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -817,7 +840,7 @@
             font-size: clamp(0.8rem, 2.1vw, 0.95rem);
             color: #3D3537;
             font-weight: 300;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.8rem;
             text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
         }
 
@@ -827,82 +850,83 @@
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.65);
             border-radius: 16px;
-            padding: 3rem 2rem 2.5rem 2rem;
+            padding: 2.2rem 1.8rem 1.8rem 1.8rem;
             max-width: 1000px;
             width: 100%;
             box-shadow: 0 15px 45px rgba(185, 165, 160, 0.16);
-            margin-bottom: 2.2rem;
+            margin-bottom: 1.5rem;
             position: relative;
         }
 
         .entourage-grid-3col {
             display: grid;
             grid-template-columns: 1fr 1fr 1.2fr;
-            gap: 1.8rem;
+            gap: 1.5rem;
             position: relative;
             text-align: center;
         }
 
         .entourage-col {
             position: relative;
-            padding: 0 0.8rem;
+            padding: 0 0.5rem;
         }
 
         .entourage-col:not(:last-child)::after {
             content: '';
             position: absolute;
             top: 5%;
-            right: -0.9rem;
+            right: -0.75rem;
             height: 90%;
             width: 1px;
             background: linear-gradient(180deg, rgba(226, 157, 167, 0) 0%, rgba(226, 157, 167, 0.6) 20%, rgba(226, 157, 167, 0.6) 80%, rgba(226, 157, 167, 0) 100%);
         }
 
         .entourage-block {
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.2rem;
         }
 
         .entourage-role-title {
             font-family: var(--font-serif);
-            font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+            font-size: clamp(0.95rem, 2.2vw, 1.2rem);
             font-style: italic;
             letter-spacing: 1.5px;
             color: var(--peony-deep);
             font-weight: 600;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.4rem;
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
         .entourage-names-list {
             font-family: var(--font-sans);
-            font-size: clamp(0.85rem, 2vw, 0.98rem);
+            font-size: clamp(0.8rem, 1.8vw, 0.92rem);
             color: #1A1415;
             font-weight: 600;
-            line-height: 1.6;
+            line-height: 1.5;
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
         .entourage-cherry-icon {
-            width: 24px;
-            height: 24px;
-            margin: 0.8rem auto 1.2rem auto;
+            width: 20px;
+            height: 20px;
+            margin: 0.5rem auto 0.8rem auto;
             opacity: 0.85;
             display: block;
         }
 
         .entourage-bridesmaids-wrapper {
-            margin-top: 1rem;
-            padding-top: 1.2rem;
+            margin-top: 0.8rem;
+            padding-top: 1rem;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
+            border-top: 1px solid rgba(226, 157, 167, 0.3);
         }
 
         .entourage-lavender-sprig {
-            width: 32px;
-            height: 70px;
+            width: 28px;
+            height: 60px;
             opacity: 0.75;
         }
 
@@ -916,7 +940,7 @@
 
         /* --- THE DETAILS (SCENE-DETAILS) TABBED INTERFACE --- */
         #scene-details {
-            padding: 5rem 1.8rem 5rem 1.8rem;
+            padding: 3rem 1.8rem;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -931,7 +955,7 @@
             color: #1A1415;
             font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
         }
 
@@ -940,10 +964,10 @@
             flex-direction: row !important;
             justify-content: center;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             max-width: 860px;
             width: 100%;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .details-tab-btn {
@@ -953,9 +977,9 @@
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.65) !important;
             border-radius: 12px !important;
-            padding: 12px 14px !important;
+            padding: 10px 12px !important;
             font-family: var(--font-serif) !important;
-            font-size: clamp(0.75rem, 2vw, 0.95rem) !important;
+            font-size: clamp(0.72rem, 1.8vw, 0.88rem) !important;
             letter-spacing: 1.5px !important;
             color: #1A1415 !important;
             font-weight: 600 !important;
@@ -988,12 +1012,12 @@
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.65);
             border-radius: 16px;
-            padding: 2.8rem 2.2rem;
+            padding: 2.2rem 1.8rem;
             max-width: 860px;
             width: 100%;
             text-align: center;
             box-shadow: 0 10px 30px rgba(185, 165, 160, 0.15);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .details-tab-content {
@@ -1015,7 +1039,7 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
-            margin: 1.5rem 0 1.8rem 0;
+            margin: 1.2rem 0 1.5rem 0;
         }
 
         .dress-swatch-item {
@@ -1026,8 +1050,8 @@
         }
 
         .swatch-circle {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             border: 1px solid rgba(226, 157, 167, 0.6);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -1043,8 +1067,8 @@
 
         .swatch-label {
             font-family: var(--font-serif);
-            font-size: 0.72rem;
-            letter-spacing: 2px;
+            font-size: 0.68rem;
+            letter-spacing: 1.5px;
             color: #3D3537;
             text-transform: uppercase;
             font-weight: 500;
@@ -1129,13 +1153,13 @@
 
         /* --- RSVP STYLING --- */
         .rsvp-qr-code-img {
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
             object-fit: contain;
-            margin: 1.2rem auto 1rem auto;
+            margin: 1rem auto 0.8rem auto;
             display: block;
             background: #FFFFFF;
-            padding: 8px;
+            padding: 6px;
             border-radius: 8px;
             box-shadow: 0 6px 20px rgba(173, 83, 98, 0.12);
             border: 1px solid rgba(255, 183, 206, 0.4);
@@ -1147,27 +1171,27 @@
             color: var(--peony-deep);
             font-weight: 600;
             letter-spacing: 1px;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             line-height: 1.4;
             text-transform: uppercase;
         }
 
         .rsvp-body-lead {
             font-family: var(--font-sans);
-            font-size: clamp(0.82rem, 2vw, 0.92rem);
+            font-size: clamp(0.8rem, 2vw, 0.88rem);
             color: #3D3537;
-            line-height: 1.6;
-            margin-bottom: 0.6rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
             font-weight: 400;
         }
 
         .rsvp-body-heart {
             font-family: var(--font-serif);
-            font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+            font-size: clamp(0.85rem, 2.2vw, 1rem);
             color: var(--peony-deep);
             font-style: italic;
             font-weight: 500;
-            margin-top: 0.8rem;
+            margin-top: 0.6rem;
         }
 
         /* --- PROGRAM FLOW INFOGRAPHIC MODAL STYLING --- */
@@ -1374,7 +1398,7 @@
             user-select: none;
         }
 
-        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT (SIDE FLOWERS PROPERLY FRAMED) --- */
+        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT (SINGLE-PAGE FIT & NO-REPEAT BACKGROUND) --- */
         @media (max-width: 768px) {
             #scene-story,
             #scene-menu,
@@ -1384,22 +1408,27 @@
             #scene-gallery,
             #scene-rsvp,
             #scene-outro {
-                background-size: 100% auto !important;
+                background-size: 100% 100vh !important;
                 background-position: center top !important;
-                background-repeat: repeat-y !important;
+                background-repeat: no-repeat !important;
                 background-attachment: scroll !important;
-                padding-left: 1.5rem !important;
-                padding-right: 1.5rem !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                height: 100vh !important;
+                max-height: 100vh !important;
+                overflow: hidden !important;
+                box-sizing: border-box;
             }
 
             .story-editorial-card {
-                padding: 2.2rem 1rem 2rem 1rem !important;
+                padding: 1.8rem 0.8rem 1.5rem 0.8rem !important;
                 background: rgba(255, 255, 255, 0.10) !important;
-                width: 80% !important;
+                width: 82% !important;
             }
+
             .chapter-container { 
-                padding: 2rem 1rem !important;
-                width: 80% !important;
+                padding: 1.8rem 0.8rem !important;
+                width: 82% !important;
                 background: rgba(255, 255, 255, 0.10) !important;
             }
 
@@ -1448,130 +1477,214 @@
 
             .cloud-headline-wrapper {
                 padding: 4px 6px;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.2rem;
             }
 
             .chapters-board-card {
-                padding: 2.2rem 1rem !important;
-                width: 80% !important;
+                padding: 1.8rem 0.8rem !important;
+                width: 82% !important;
                 background: rgba(255, 255, 255, 0.10) !important;
             }
 
-            .chapters-main-title { font-size: 1.8rem; letter-spacing: 3px; }
-            .chapters-sub-title { font-size: 0.72rem; letter-spacing: 2px; margin-bottom: 1.8rem; }
+            .chapters-main-title { font-size: 1.6rem; letter-spacing: 2px; }
+            .chapters-sub-title { font-size: 0.68rem; letter-spacing: 1.5px; margin-bottom: 1.2rem; }
             
             .inline-countdown-timer {
-                font-size: 0.95rem;
-                margin-bottom: 2.2rem;
+                font-size: 0.88rem;
+                margin-bottom: 1.5rem;
             }
 
             .nav-chapters-inline {
-                gap: 8px 10px;
+                gap: 6px 8px;
+                padding-top: 1rem;
             }
 
             .nav-item-link {
-                font-size: 0.78rem;
-                letter-spacing: 1.5px;
+                font-size: 0.72rem;
+                letter-spacing: 1px;
             }
 
-            /* LOCKED MOBILE STYLING FOR THE DAY PAGE */
+            /* LOCKED SINGLE-PAGE MOBILE FIT FOR THE DAY */
             #scene-day {
-                padding: 4rem 0.5rem 3.5rem 0.5rem !important;
+                padding: 1.5rem 0.5rem !important;
+            }
+
+            .the-day-main-card {
+                padding: 1.2rem 0.8rem !important;
+                width: 82% !important;
+                gap: 0.8rem !important;
+                background: rgba(255, 255, 255, 0.10) !important;
             }
 
             .the-day-header-title {
-                font-size: 1.8rem;
-                letter-spacing: 3px;
+                font-size: 1.4rem !important;
+                letter-spacing: 2px !important;
             }
 
-            .day-location-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 1.4rem 1rem;
-                gap: 0.8rem;
-                background: rgba(255, 255, 255, 0.10) !important;
-                margin-bottom: 1.5rem;
-                width: 80% !important;
+            .the-day-header-desc {
+                margin-bottom: 0.4rem !important;
+                font-size: 0.75rem !important;
+            }
+
+            .day-venues-wrapper {
+                gap: 0.6rem !important;
+            }
+
+            .day-venue-subcard {
+                flex-direction: column !important;
+                text-align: center !important;
+                padding: 0.8rem 0.6rem !important;
+                gap: 0.4rem !important;
+                background: rgba(255, 255, 255, 0.15) !important;
             }
 
             .day-card-illustration {
-                width: 90px;
-                max-height: 75px;
+                width: 55px !important;
+                max-height: 45px !important;
+            }
+
+            .day-card-venue-title {
+                font-size: 0.92rem !important;
+                margin-bottom: 0.1rem !important;
+            }
+
+            .day-card-datetime {
+                font-size: 0.68rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+
+            .day-card-description {
+                font-size: 0.72rem !important;
+                margin-bottom: 0.4rem !important;
             }
 
             .day-card-actions {
                 justify-content: center !important;
+                gap: 6px !important;
             }
 
-            /* LOCKED MOBILE STYLING FOR THE ENTOURAGE PAGE */
+            .day-card-actions .btn-day-action {
+                font-size: 0.58rem !important;
+                padding: 5px 12px !important;
+            }
+
+            /* LOCKED SINGLE-PAGE MOBILE FIT FOR THE ENTOURAGE */
             #scene-entourage {
-                padding: 5rem 0.5rem 3.5rem 0.5rem !important;
+                padding: 1.5rem 0.5rem !important;
             }
 
             .entourage-header-title {
-                font-size: 1.8rem;
-                letter-spacing: 3px;
+                font-size: 1.4rem !important;
+                letter-spacing: 2px !important;
+            }
+
+            .entourage-header-desc {
+                font-size: 0.72rem !important;
+                margin-bottom: 0.8rem !important;
             }
 
             .entourage-board-card {
-                padding: 2.2rem 1rem 1.8rem 1rem !important;
+                padding: 1.2rem 0.8rem !important;
                 background: rgba(255, 255, 255, 0.10) !important;
-                width: 80% !important;
+                width: 82% !important;
+                margin-bottom: 0.8rem !important;
             }
 
             .entourage-grid-3col {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+                grid-template-columns: 1fr !important;
+                gap: 0.6rem !important;
             }
 
             .entourage-col:not(:last-child)::after {
-                display: none;
+                display: none !important;
+            }
+
+            .entourage-block {
+                margin-bottom: 0.5rem !important;
+            }
+
+            .entourage-role-title {
+                font-size: 0.88rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+
+            .entourage-names-list {
+                font-size: 0.72rem !important;
+                line-height: 1.3 !important;
+            }
+
+            .entourage-cherry-icon {
+                display: none !important;
             }
 
             .entourage-bridesmaids-wrapper {
-                flex-direction: column;
-                gap: 0.5rem;
+                flex-direction: column !important;
+                gap: 0.3rem !important;
+                padding-top: 0.6rem !important;
+                margin-top: 0.4rem !important;
             }
 
             .entourage-lavender-sprig {
-                display: none;
+                display: none !important;
             }
 
-            /* LOCKED MOBILE STYLING FOR THE DETAILS PAGE */
+            /* LOCKED SINGLE-PAGE MOBILE FIT FOR THE DETAILS */
             #scene-details {
-                padding: 4rem 0.5rem 3.5rem 0.5rem !important;
+                padding: 1.5rem 0.5rem !important;
+            }
+
+            .details-header-title {
+                font-size: 1.4rem !important;
+                letter-spacing: 2px !important;
+                margin-bottom: 0.8rem !important;
             }
 
             .details-tab-bar {
                 flex-direction: row !important;
-                gap: 6px;
-                width: 80%;
+                gap: 4px !important;
+                width: 82% !important;
+                margin-bottom: 0.8rem !important;
             }
 
             .details-tab-btn {
-                padding: 10px 6px !important;
-                font-size: clamp(0.60rem, 2.2vw, 0.78rem) !important;
-                letter-spacing: 1px !important;
-                gap: 4px;
+                padding: 6px 4px !important;
+                font-size: 0.58rem !important;
+                letter-spacing: 0.5px !important;
+                gap: 2px !important;
             }
 
             .details-panel-card {
-                padding: 1.8rem 1.2rem;
-                width: 80% !important;
+                padding: 1.2rem 0.8rem !important;
+                width: 82% !important;
                 background: rgba(255, 255, 255, 0.10) !important;
+                margin-bottom: 0.8rem !important;
+            }
+
+            .dress-code-swatch-wrapper {
+                margin: 0.8rem 0 1rem 0 !important;
+                gap: 12px !important;
+            }
+
+            .swatch-circle {
+                width: 26px !important;
+                height: 26px !important;
+            }
+
+            .swatch-label {
+                font-size: 0.58rem !important;
             }
 
             /* NOSTALGIC POLAROID GRID FOR MOBILE GALLERY VIEW */
             #scene-gallery {
-                padding: 2rem 0.5rem 1.5rem 0.5rem !important;
+                padding: 1.5rem 0.5rem !important;
             }
 
             .gallery-polaroid-grid {
                 grid-template-columns: repeat(5, 1fr) !important;
                 gap: 4px !important;
                 padding: 6px !important;
-                width: 80% !important;
-                margin-bottom: 1rem !important;
+                width: 82% !important;
+                margin-bottom: 0.8rem !important;
                 background: rgba(255, 255, 255, 0.10) !important;
             }
 
@@ -1580,19 +1693,19 @@
             }
 
             .rsvp-qr-code-img {
-                width: 130px;
-                height: 130px;
+                width: 110px !important;
+                height: 110px !important;
             }
 
             .program-modal-container {
-                padding: 1.8rem 1rem;
+                padding: 1.5rem 0.8rem;
             }
 
             .program-timeline-track {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem 1rem;
-                margin: 1.5rem 0;
+                gap: 1.2rem 0.8rem;
+                margin: 1rem 0;
             }
 
             .program-timeline-line {
@@ -1600,20 +1713,20 @@
             }
 
             .program-node-icon {
-                margin-bottom: 10px;
-                width: 42px;
-                height: 42px;
+                margin-bottom: 8px;
+                width: 36px;
+                height: 36px;
             }
 
             .program-node-dot {
                 display: none;
             }
 
-            .story-header-title { font-size: 1.1rem; letter-spacing: 4px; }
-            .story-script-heading { font-size: 1.5rem; }
-            .story-body-text { font-size: 0.85rem; line-height: 1.6; }
+            .story-header-title { font-size: 1rem; letter-spacing: 3px; }
+            .story-script-heading { font-size: 1.3rem; }
+            .story-body-text { font-size: 0.78rem; line-height: 1.5; }
 
-            .memory-photo-card { flex: 0 0 135px; height: 175px; }
+            .memory-photo-card { flex: 0 0 120px; height: 155px; }
         }
     </style>
 </head>
@@ -1849,58 +1962,60 @@
             </div>
         </section>
 
-        <!-- 5. THE DAY -->
+        <!-- 5. THE DAY (COMPACT SINGLE-SCREEN STRUCTURE) -->
         <section class="stage hidden" id="scene-day">
-            <div>
-                <p class="the-day-header-subtitle">A day we will always remember.</p>
-                <h2 class="the-day-header-title">THE DETAILS</h2>
-                <p class="the-day-header-desc">Two places. One promise.</p>
-            </div>
+            <div class="the-day-main-card">
+                <div>
+                    <p class="the-day-header-subtitle">A day we will always remember.</p>
+                    <h2 class="the-day-header-title">THE DETAILS</h2>
+                    <p class="the-day-header-desc">Two places. One promise.</p>
+                </div>
 
-            <!-- CEREMONY CARD WITH ARCHITECTURAL ILLUSTRATION -->
-            <div class="day-location-card">
-                <svg class="day-card-illustration" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M100 15 L140 45 V140 H60 V45 Z" stroke="#221D1E" stroke-width="1.8" fill="none"/>
-                    <path d="M100 15 V45 M80 45 H120" stroke="#221D1E" stroke-width="1.5"/>
-                    <path d="M85 80 Q100 65 115 80 V140 H85 Z" stroke="#221D1E" stroke-width="1.5" fill="none"/>
-                    <circle cx="100" cy="40" r="8" stroke="#221D1E" stroke-width="1.2"/>
-                    <path d="M40 70 L60 55 V140 H40 Z M160 70 L140 55 V140 H160 Z" stroke="#221D1E" stroke-width="1.5" fill="none"/>
-                    <line x1="20" y1="140" x2="180" y2="140" stroke="#221D1E" stroke-width="2"/>
-                </svg>
+                <div class="day-venues-wrapper">
+                    <!-- CEREMONY SUBCARD -->
+                    <div class="day-venue-subcard">
+                        <svg class="day-card-illustration" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M100 15 L140 45 V140 H60 V45 Z" stroke="#221D1E" stroke-width="1.8" fill="none"/>
+                            <path d="M100 15 V45 M80 45 H120" stroke="#221D1E" stroke-width="1.5"/>
+                            <path d="M85 80 Q100 65 115 80 V140 H85 Z" stroke="#221D1E" stroke-width="1.5" fill="none"/>
+                            <circle cx="100" cy="40" r="8" stroke="#221D1E" stroke-width="1.2"/>
+                            <path d="M40 70 L60 55 V140 H40 Z M160 70 L140 55 V140 H160 Z" stroke="#221D1E" stroke-width="1.5" fill="none"/>
+                            <line x1="20" y1="140" x2="180" y2="140" stroke="#221D1E" stroke-width="2"/>
+                        </svg>
 
-                <div class="day-card-info">
-                    <h3 class="day-card-venue-title" id="ceremony-venue">SAN SEBASTIAN CHURCH</h3>
-                    <p class="day-card-datetime" id="ceremony-time">MANILA · TUESDAY, JANUARY 31, 2028 · 3:00 PM</p>
-                    <p class="day-card-description" id="ceremony-desc">Where our forever begins.</p>
-                    <div class="day-card-actions">
-                        <a id="ceremony-map" href="#" target="_blank" class="btn-day-action">GET DIRECTIONS →</a>
+                        <div class="day-card-info">
+                            <h3 class="day-card-venue-title" id="ceremony-venue">SAN SEBASTIAN CHURCH</h3>
+                            <p class="day-card-datetime" id="ceremony-time">MANILA · TUESDAY, JANUARY 31, 2028 · 3:00 PM</p>
+                            <p class="day-card-description" id="ceremony-desc">Where our forever begins.</p>
+                            <div class="day-card-actions">
+                                <a id="ceremony-map" href="#" target="_blank" class="btn-day-action">GET DIRECTIONS →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RECEPTION SUBCARD -->
+                    <div class="day-venue-subcard">
+                        <svg class="day-card-illustration" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30 50 H170 V140 H30 Z" stroke="#221D1E" stroke-width="1.8" fill="none"/>
+                            <path d="M20 50 L100 25 L180 50" stroke="#221D1E" stroke-width="2" fill="none"/>
+                            <path d="M70 90 H130 V140 H70 Z" stroke="#221D1E" stroke-width="1.5" fill="none"/>
+                            <path d="M45 70 H65 V90 H45 Z M135 70 H155 V90 H135 Z M45 105 H65 V125 H45 Z M135 105 H155 V125 H135 Z" stroke="#221D1E" stroke-width="1.2" fill="none"/>
+                            <line x1="10" y1="140" x2="190" y2="140" stroke="#221D1E" stroke-width="2"/>
+                        </svg>
+
+                        <div class="day-card-info">
+                            <h3 class="day-card-venue-title" id="reception-venue">MANILA HOTEL</h3>
+                            <p class="day-card-datetime" id="reception-time">MANILA · TUESDAY, JANUARY 31, 2028 · 6:00 PM</p>
+                            <p class="day-card-description" id="reception-desc">A celebration to remember.</p>
+                            <div class="day-card-actions">
+                                <a id="reception-map" href="#" target="_blank" class="btn-day-action">GET DIRECTIONS →</a>
+                                <button class="btn-day-action" onclick="toggleProgramFlow()">PROGRAM FLOW →</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- RECEPTION CARD WITH ARCHITECTURAL ILLUSTRATION -->
-            <div class="day-location-card">
-                <svg class="day-card-illustration" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30 50 H170 V140 H30 Z" stroke="#221D1E" stroke-width="1.8" fill="none"/>
-                    <path d="M20 50 L100 25 L180 50" stroke="#221D1E" stroke-width="2" fill="none"/>
-                    <path d="M70 90 H130 V140 H70 Z" stroke="#221D1E" stroke-width="1.5" fill="none"/>
-                    <path d="M45 70 H65 V90 H45 Z M135 70 H155 V90 H135 Z M45 105 H65 V125 H45 Z M135 105 H155 V125 H135 Z" stroke="#221D1E" stroke-width="1.2" fill="none"/>
-                    <line x1="10" y1="140" x2="190" y2="140" stroke="#221D1E" stroke-width="2"/>
-                </svg>
-
-                <div class="day-card-info">
-                    <h3 class="day-card-venue-title" id="reception-venue">MANILA HOTEL</h3>
-                    <p class="day-card-datetime" id="reception-time">MANILA · TUESDAY, JANUARY 31, 2028 · 6:00 PM</p>
-                    <p class="day-card-description" id="reception-desc">A celebration to remember.</p>
-                    <div class="day-card-actions">
-                        <a id="reception-map" href="#" target="_blank" class="btn-day-action">GET DIRECTIONS →</a>
-                        <button class="btn-day-action" onclick="toggleProgramFlow()">PROGRAM FLOW →</button>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 1.5rem;">
-                <button class="btn-day-action" onclick="scrollToSection('scene-menu')">← BACK TO CHAPTERS</button>
+                <button class="btn-day-action" onclick="scrollToSection('scene-menu')" style="margin-top: 0.2rem;">← BACK TO CHAPTERS</button>
             </div>
         </section>
 
@@ -2026,8 +2141,8 @@
             <div class="details-panel-card">
                 <!-- TAB 1: DRESS CODE -->
                 <div class="details-tab-content active-content" id="tab-dress-code">
-                    <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #1A1415; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 1px 4px rgba(255,255,255,0.8);" id="dress-code-title">BLACK & WHITE</h3>
-                    <p style="font-size: 0.88rem; color: var(--peony-deep); font-weight: 600; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; text-shadow: 0 1px 4px rgba(255,255,255,0.8);" id="dress-code-sub">Keep it classic. Keep it timeless.</p>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: #1A1415; margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 1px 4px rgba(255,255,255,0.8);" id="dress-code-title">BLACK & WHITE</h3>
+                    <p style="font-size: 0.82rem; color: var(--peony-deep); font-weight: 600; margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 1.5px; text-shadow: 0 1px 4px rgba(255,255,255,0.8);" id="dress-code-sub">Keep it classic. Keep it timeless.</p>
                     
                     <!-- ELEGANT COLOR SWATCHES -->
                     <div class="dress-code-swatch-wrapper">
@@ -2041,21 +2156,21 @@
                         </div>
                     </div>
 
-                    <div style="font-size: 0.9rem; line-height: 1.8; color: #1A1415; font-weight: 500; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">
-                        <p style="margin-bottom: 0.6rem;"><strong>LADIES:</strong> <span id="dress-code-ladies" style="font-weight: 400;">Black, white, ivory, or monochrome formalwear.</span></p>
+                    <div style="font-size: 0.82rem; line-height: 1.6; color: #1A1415; font-weight: 500; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">
+                        <p style="margin-bottom: 0.4rem;"><strong>LADIES:</strong> <span id="dress-code-ladies" style="font-weight: 400;">Black, white, ivory, or monochrome formalwear.</span></p>
                         <p><strong>GENTLEMEN:</strong> <span id="dress-code-gents" style="font-weight: 400;">Black suit, tuxedo, white shirt, or classic monochrome formalwear.</span></p>
                     </div>
                 </div>
 
                 <!-- TAB 2: REGISTRY & GIFTS -->
                 <div class="details-tab-content" id="tab-registry">
-                    <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #1A1415; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">REGISTRY & GIFTS</h3>
-                    <p style="font-size: 0.88rem; line-height: 1.7; color: #1A1415; margin-bottom: 1.5rem; font-weight: 400; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">
+                    <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: #1A1415; margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">REGISTRY & GIFTS</h3>
+                    <p style="font-size: 0.82rem; line-height: 1.5; color: #1A1415; margin-bottom: 1.2rem; font-weight: 400; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">
                         We are immensely grateful for your love and support. Your presence at our wedding is the greatest gift of all. If you wish to bless us with a gift, a contribution towards our future together or our gift registry would be deeply appreciated.
                     </p>
-                    <div style="font-size: 0.88rem; line-height: 1.6; color: #1A1415;">
-                        <p style="margin-bottom: 1rem; font-weight: 600; text-shadow: 0 1px 4px rgba(255,255,255,0.8);"><strong>Send Monetary Gift (<span id="gift-label">GCash / Maya</span>):</strong> <span id="gift-number" style="font-weight: 400;">0917-XXX-XXXX</span></p>
-                        <a id="gift-link" href="#" target="_blank" class="btn-day-action" style="font-size: 0.75rem; padding: 8px 20px; margin-top: 4px;">
+                    <div style="font-size: 0.82rem; line-height: 1.5; color: #1A1415;">
+                        <p style="margin-bottom: 0.8rem; font-weight: 600; text-shadow: 0 1px 4px rgba(255,255,255,0.8);"><strong>Send Monetary Gift (<span id="gift-label">GCash / Maya</span>):</strong> <span id="gift-number" style="font-weight: 400;">0917-XXX-XXXX</span></p>
+                        <a id="gift-link" href="#" target="_blank" class="btn-day-action" style="font-size: 0.7rem; padding: 6px 16px; margin-top: 2px;">
                             View Online Gift Registry →
                         </a>
                     </div>
@@ -2063,8 +2178,8 @@
 
                 <!-- TAB 3: FAQs -->
                 <div class="details-tab-content" id="tab-faq">
-                    <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #1A1415; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">FREQUENTLY ASKED QUESTIONS</h3>
-                    <div id="faq-list" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: #1A1415; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">FREQUENTLY ASKED QUESTIONS</h3>
+                    <div id="faq-list" style="display: flex; flex-direction: column; gap: 0.8rem;"></div>
                 </div>
             </div>
 
@@ -2085,7 +2200,7 @@
             </button>
         </section>
 
-        <!-- 9. RSVP (UPDATED CONTENT WITH SAMPLEQR.PNG) -->
+        <!-- 9. RSVP -->
         <section class="stage hidden" id="scene-rsvp">
             <article class="chapter-container fade-in-up" style="max-width: 550px;">
                 <h2 class="rsvp-subtext-heading">ONE LAST THING…</h2>
@@ -2102,7 +2217,7 @@
                     We’d really love to have you there.
                 </p>
 
-                <div style="text-align: center; margin-top: 1.8rem;">
+                <div style="text-align: center; margin-top: 1.2rem;">
                     <button class="btn-day-action" onclick="scrollToSection('scene-menu')">← Back to Chapters</button>
                 </div>
             </article>
@@ -2451,9 +2566,9 @@
         function renderFAQ() {
             const container = document.getElementById('faq-list');
             container.innerHTML = faqData.map(item => `
-                <div style="border-bottom: 1px dashed rgba(226, 157, 167, 0.4); padding-bottom: 10px; text-align: left;">
-                    <p style="font-weight: 600; font-size: 0.9rem; color: #1A1415; font-family: var(--font-serif); letter-spacing: 1px;">Q: ${item.q}</p>
-                    <p style="font-size: 0.85rem; color: #3D3537; margin-top: 4px; font-weight: 300;">A: ${item.a}</p>
+                <div style="border-bottom: 1px dashed rgba(226, 157, 167, 0.4); padding-bottom: 6px; text-align: left;">
+                    <p style="font-weight: 600; font-size: 0.82rem; color: #1A1415; font-family: var(--font-serif); letter-spacing: 1px;">Q: ${item.q}</p>
+                    <p style="font-size: 0.75rem; color: #3D3537; margin-top: 2px; font-weight: 300;">A: ${item.a}</p>
                 </div>
             `).join('');
         }
