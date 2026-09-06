@@ -114,22 +114,24 @@
             display: none !important;
         }
 
-        /* --- UNIFIED BACKGROUND.JPG SETTINGS FOR ALL SUCCEEDING PAGES --- */
-        #scene-story,
-        #scene-menu,
-        #scene-day,
-        #scene-entourage,
-        #scene-details,
-        #scene-gallery,
-        #scene-rsvp,
-        #scene-outro {
-            width: 100%;
-            min-height: 100vh;
+        /* --- FIXED FULL VIEWPORT BACKGROUND LAYER (GUARANTEES BACKGROUND.JPG VISIBILITY) --- */
+        .stage-container::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             background-image: linear-gradient(rgba(255, 253, 249, 0.12), rgba(253, 240, 244, 0.18)), url('background.jpg?v=mobile-fit');
             background-size: cover;
             background-position: center top;
             background-repeat: no-repeat;
-            background-attachment: fixed;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .stage {
+            z-index: 1;
         }
 
         /* --- LAYER 1: ENCHANTED GATEWAY --- */
@@ -318,7 +320,7 @@
             transform: translateY(-1px);
         }
 
-        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (EXACTLY 10% OPACITY) --- */
+        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (STRICT 10% OPACITY) --- */
         .chapter-container {
             max-width: 900px;
             width: 100%;
@@ -1394,26 +1396,12 @@
             user-select: none;
         }
 
-        /* --- MOBILE ENHANCED RESPONSIVE LAYOUT (NATURAL UNSTRETCHED BACKGROUND) --- */
+        /* --- MOBILE RESPONSIVE STYLING (NATURAL UNSTRETCHED BACKGROUND & SIDE FLOWERS) --- */
         @media (max-width: 768px) {
-            #scene-story,
-            #scene-menu,
-            #scene-day,
-            #scene-entourage,
-            #scene-details,
-            #scene-gallery,
-            #scene-rsvp,
-            #scene-outro {
-                background-size: cover !important;
+            .stage-container::before {
+                background-size: contain !important;
                 background-position: center top !important;
                 background-repeat: repeat-y !important;
-                background-attachment: scroll !important;
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-                min-height: 100vh !important;
-                height: auto !important;
-                overflow: visible !important;
-                box-sizing: border-box;
             }
 
             .story-editorial-card {
@@ -1483,7 +1471,7 @@
             }
 
             .chapters-main-title { font-size: 1.6rem; letter-spacing: 2px; }
-            .chapters-sub-title { font-size: 0.68rem; letter-spacing: 1.5px; margin-bottom: 1.2rem; }
+            .chapters-sub-title { font-size: 0.72rem; letter-spacing: 1.5px; margin-bottom: 1.2rem; }
             
             .inline-countdown-timer {
                 font-size: 0.88rem;
@@ -1673,8 +1661,6 @@
             /* NOSTALGIC POLAROID GRID FOR MOBILE GALLERY VIEW */
             #scene-gallery {
                 padding: 2rem 0.5rem 1.5rem 0.5rem !important;
-                height: auto !important;
-                max-height: none !important;
             }
 
             .gallery-polaroid-grid {
