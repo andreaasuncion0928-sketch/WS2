@@ -159,31 +159,49 @@
             pointer-events: none;
         }
 
+        /* --- EMPHASIZED ENVELOPE CONTAINER & GLOW EFFECTS --- */
         .png-envelope-container {
             position: relative;
-            max-width: 900px;
-            width: 95vw;
+            max-width: 820px;
+            width: 90vw;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: transform 0.4s ease;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.5s ease;
+            border-radius: 12px;
+            /* Glowing ambient effect behind the envelope */
+            box-shadow: 0 0 50px rgba(255, 183, 206, 0.8), 0 0 90px rgba(226, 157, 167, 0.5), 0 20px 40px rgba(0, 0, 0, 0.25);
+            animation: envelopePulse 3s infinite ease-in-out;
+        }
+
+        @keyframes envelopePulse {
+            0%, 100% {
+                box-shadow: 0 0 40px rgba(255, 183, 206, 0.7), 0 0 80px rgba(226, 157, 167, 0.4), 0 15px 35px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 65px rgba(255, 183, 206, 1), 0 0 110px rgba(226, 157, 167, 0.7), 0 25px 50px rgba(0, 0, 0, 0.3);
+            }
         }
 
         .png-envelope-container:hover {
-            transform: scale(1.015);
+            transform: scale(1.03);
+            filter: brightness(1.03);
         }
 
+        /* --- BLACK OUTLINE & DOMINANT GRAPHIC STYLING --- */
         .png-envelope-img {
             width: 100%;
             height: auto;
-            max-height: 85vh;
+            max-height: 82vh;
             object-fit: contain;
             display: block;
             pointer-events: none;
             user-select: none;
             position: relative;
             z-index: 10;
+            /* Creates a sharp, prominent black outline around PNG artwork transparent edges + adds extra crisp shadow depth */
+            filter: drop-shadow(0px 0px 2.5px #1A1415) drop-shadow(0px 0px 1px #000000) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.35));
         }
 
         /* --- LAYER 2: ELENA & ADRIAN PAGE --- */
@@ -1417,7 +1435,7 @@
             }
 
             .png-envelope-container {
-                width: 105vw;
+                width: 95vw;
             }
 
             .second-page-card-container {
