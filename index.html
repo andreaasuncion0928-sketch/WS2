@@ -606,34 +606,37 @@
             text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
         }
 
+        /* CHAPTERS SUB-TITLE: THIN, MINIMALIST, HIGH-VISIBILITY DATE & TIME */
         .chapters-sub-title {
-            font-family: var(--font-serif);
-            font-size: clamp(0.75rem, 2.2vw, 0.95rem);
-            letter-spacing: 4px;
-            color: var(--champagne-gold);
+            font-family: var(--font-sans) !important;
+            font-size: clamp(0.95rem, 2.8vw, 1.35rem) !important;
+            letter-spacing: clamp(2px, 0.8vw, 4px) !important;
+            color: #1A1415 !important;
             text-transform: uppercase;
-            font-weight: 600;
-            margin-bottom: 2rem;
+            font-weight: 300 !important;
+            margin-bottom: 0.8rem;
             text-align: center !important;
             width: 100%;
-            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
+            line-height: 1.4;
+            text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
         }
 
-        /* COUNTDOWN TIMER STYLING (REDUCED SIZE FOR PROPORTIONAL HIERARCHY) */
+        /* REDUCED COUNTDOWN TIMER SIZE AND WEIGHT */
         .inline-countdown-timer {
             font-family: var(--font-sans);
-            font-size: clamp(0.82rem, 2.2vw, 1.1rem);
-            font-weight: 400 !important;
+            font-size: clamp(0.72rem, 1.8vw, 0.92rem) !important;
+            font-weight: 200 !important;
             color: var(--peony-deep);
             letter-spacing: 1.5px;
             margin-bottom: 2.2rem;
             text-align: center !important;
             width: 100%;
+            opacity: 0.9;
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95);
         }
 
         .inline-countdown-timer span {
-            font-weight: 600 !important;
+            font-weight: 400 !important;
         }
 
         .nav-chapters-inline {
@@ -677,7 +680,7 @@
 
         /* --- THE DAY (SCENE-DAY) STYLING --- */
         #scene-day {
-            padding: 5rem 1.8rem 5rem 1.8rem;
+            padding: 4rem 1.8rem;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -766,28 +769,30 @@
             min-width: 0;
         }
 
+        /* THINNER, LARGER, MINIMALIST VENUE TITLE (SERIF 300) */
         .day-card-venue-title {
-            font-family: var(--font-serif);
-            font-size: clamp(1.05rem, 2.8vw, 1.45rem);
-            letter-spacing: 1.5px;
-            color: #1A1415;
-            font-weight: 600;
+            font-family: var(--font-serif) !important;
+            font-size: clamp(1.25rem, 3.5vw, 1.85rem) !important;
+            letter-spacing: clamp(1.5px, 0.5vw, 3.5px) !important;
+            color: #1A1415 !important;
+            font-weight: 300 !important;
             text-transform: uppercase;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.15rem !important;
+            line-height: 1.2;
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
-        /* UPDATED BOLD HIGH-CONTRAST SANS-SERIF DATE & TIME FOR THE DAY PAGE */
+        /* BALANCED & MINIMIZED DATE / TIME SUB-HEADING */
         .day-card-datetime {
             font-family: var(--font-sans) !important;
-            font-size: clamp(0.95rem, 2.6vw, 1.3rem) !important;
-            letter-spacing: 0.8px !important;
-            color: #1A1415 !important;
-            font-weight: 700 !important;
+            font-size: clamp(0.72rem, 1.8vw, 0.88rem) !important;
+            letter-spacing: 1.2px !important;
+            color: var(--peony-deep) !important;
+            font-weight: 500 !important;
             text-transform: uppercase;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem !important;
             line-height: 1.35;
-            text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
+            text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
         .day-card-description {
@@ -1474,11 +1479,11 @@
             }
 
             .chapters-main-title { font-size: 1.6rem; letter-spacing: 2px; }
-            .chapters-sub-title { font-size: 0.72rem; letter-spacing: 1.5px; margin-bottom: 1.2rem; }
+            .chapters-sub-title { font-size: 0.85rem !important; letter-spacing: 1.5px !important; margin-bottom: 0.6rem !important; }
             
             .inline-countdown-timer {
-                font-size: 0.78rem;
-                margin-bottom: 1.2rem;
+                font-size: 0.68rem !important;
+                margin-bottom: 1.2rem !important;
             }
 
             .nav-chapters-inline {
@@ -1493,7 +1498,7 @@
 
             /* MOBILE LAYOUT FOR THE DAY */
             #scene-day {
-                padding: 2.5rem 0.5rem !important;
+                padding: 2rem 0.5rem !important;
             }
 
             .the-day-main-card {
@@ -1531,12 +1536,14 @@
             }
 
             .day-card-venue-title {
-                font-size: 0.92rem !important;
+                font-size: 1.05rem !important;
+                letter-spacing: 1.5px !important;
                 margin-bottom: 0.1rem !important;
             }
 
             .day-card-datetime {
-                font-size: 0.8rem !important;
+                font-size: 0.68rem !important;
+                letter-spacing: 0.8px !important;
                 margin-bottom: 0.2rem !important;
             }
 
