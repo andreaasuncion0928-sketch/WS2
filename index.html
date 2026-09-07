@@ -23,7 +23,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Great+Vibes&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Great+Vibes&family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* --- BABY PINK (#FFB7CE) & PEONY THEMING --- */
@@ -114,7 +114,7 @@
             display: none !important;
         }
 
-        /* --- FIXED FULL VIEWPORT BACKGROUND LAYER (GUARANTEES BACKGROUND.JPG VISIBILITY) --- */
+        /* --- FIXED FULL VIEWPORT BACKGROUND LAYER --- */
         .stage-container::before {
             content: '';
             position: fixed;
@@ -320,7 +320,7 @@
             transform: translateY(-1px);
         }
 
-        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY (STRICT 10% OPACITY) --- */
+        /* --- GENERAL TRANSLUCENT CHAPTER BOARD OVERLAY --- */
         .chapter-container {
             max-width: 900px;
             width: 100%;
@@ -619,20 +619,21 @@
             text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
         }
 
+        /* COUNTDOWN TIMER STYLING (REDUCED SIZE FOR PROPORTIONAL HIERARCHY) */
         .inline-countdown-timer {
             font-family: var(--font-sans);
-            font-size: clamp(1.05rem, 3.2vw, 1.7rem);
-            font-weight: 300 !important;
-            color: #1A1415;
-            letter-spacing: 1px;
-            margin-bottom: 2.5rem;
+            font-size: clamp(0.82rem, 2.2vw, 1.1rem);
+            font-weight: 400 !important;
+            color: var(--peony-deep);
+            letter-spacing: 1.5px;
+            margin-bottom: 2.2rem;
             text-align: center !important;
             width: 100%;
-            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
+            text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95);
         }
 
         .inline-countdown-timer span {
-            font-weight: 300 !important;
+            font-weight: 600 !important;
         }
 
         .nav-chapters-inline {
@@ -772,19 +773,21 @@
             color: #1A1415;
             font-weight: 600;
             text-transform: uppercase;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
             text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
         }
 
+        /* UPDATED BOLD HIGH-CONTRAST SANS-SERIF DATE & TIME FOR THE DAY PAGE */
         .day-card-datetime {
-            font-family: var(--font-serif);
-            font-size: clamp(0.75rem, 1.8vw, 0.88rem);
-            letter-spacing: 1px;
-            color: #7D2D3E;
-            font-weight: 600;
+            font-family: var(--font-sans) !important;
+            font-size: clamp(0.95rem, 2.6vw, 1.3rem) !important;
+            letter-spacing: 0.8px !important;
+            color: #1A1415 !important;
+            font-weight: 700 !important;
             text-transform: uppercase;
-            margin-bottom: 0.3rem;
-            text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.4rem;
+            line-height: 1.35;
+            text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
         }
 
         .day-card-description {
@@ -1396,7 +1399,7 @@
             user-select: none;
         }
 
-        /* --- MOBILE RESPONSIVE STYLING (NATURAL UNSTRETCHED BACKGROUND & SIDE FLOWERS) --- */
+        /* --- MOBILE RESPONSIVE STYLING --- */
         @media (max-width: 768px) {
             .stage-container::before {
                 background-size: contain !important;
@@ -1474,8 +1477,8 @@
             .chapters-sub-title { font-size: 0.72rem; letter-spacing: 1.5px; margin-bottom: 1.2rem; }
             
             .inline-countdown-timer {
-                font-size: 0.88rem;
-                margin-bottom: 1.5rem;
+                font-size: 0.78rem;
+                margin-bottom: 1.2rem;
             }
 
             .nav-chapters-inline {
@@ -1533,7 +1536,7 @@
             }
 
             .day-card-datetime {
-                font-size: 0.68rem !important;
+                font-size: 0.8rem !important;
                 margin-bottom: 0.2rem !important;
             }
 
